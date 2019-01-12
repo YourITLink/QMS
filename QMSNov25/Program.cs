@@ -18,7 +18,7 @@ namespace QMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new invoicing.invSearchForm());
+            Application.Run(new loginForm());
         }
         
     }

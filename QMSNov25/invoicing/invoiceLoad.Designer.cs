@@ -526,9 +526,10 @@
             // invoiceDateDateTimePicker
             // 
             this.invoiceDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoicesBindingSource, "InvoiceDate", true));
+            this.invoiceDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.invoiceDateDateTimePicker.Location = new System.Drawing.Point(131, 56);
             this.invoiceDateDateTimePicker.Name = "invoiceDateDateTimePicker";
-            this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(102, 20);
             this.invoiceDateDateTimePicker.TabIndex = 7;
             // 
             // customerOrderNoTextBox
@@ -1062,7 +1063,6 @@
             this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
             this.searchToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.searchToolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
-            this.searchToolStripMenuItem1.Click += new System.EventHandler(this.searchToolStripMenuItem1_Click);
             // 
             // menuStrip1
             // 
@@ -1389,8 +1389,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "invoiceLoad";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Create Invoice | QSync by Your IT Link";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Invoice System | QSync by Your IT Link";
             this.Load += new System.EventHandler(this.invoiceCreate_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

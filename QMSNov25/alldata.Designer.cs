@@ -76,6 +76,8 @@ namespace QMS {
         
         private global::System.Data.DataRelation relationInvNbr2;
         
+        private global::System.Data.DataRelation relationquotesRelationship;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -731,6 +733,7 @@ namespace QMS {
             this.relationInvNbr = this.Relations["InvNbr"];
             this.relationInvNbr1 = this.Relations["InvNbr1"];
             this.relationInvNbr2 = this.Relations["InvNbr2"];
+            this.relationquotesRelationship = this.Relations["quotesRelationship"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -799,6 +802,10 @@ namespace QMS {
                         this.tableinvoices.InvoiceNumberColumn}, new global::System.Data.DataColumn[] {
                         this.tableInvoiceComplete.InvoiceNumberColumn}, false);
             this.Relations.Add(this.relationInvNbr2);
+            this.relationquotesRelationship = new global::System.Data.DataRelation("quotesRelationship", new global::System.Data.DataColumn[] {
+                        this.tablequotes.QuoteNumberColumn}, new global::System.Data.DataColumn[] {
+                        this.tablequoteitems.QNLColumn}, false);
+            this.Relations.Add(this.relationquotesRelationship);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4924,7 +4931,7 @@ namespace QMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public quoteitemsRow AddquoteitemsRow(int ItemNumber, string QuoteNumber, string ItemDescription, string Details, double Price, int QNL) {
+            public quoteitemsRow AddquoteitemsRow(int ItemNumber, string QuoteNumber, string ItemDescription, string Details, double Price, quotesRow parentquotesRowByquotesRelationship) {
                 quoteitemsRow rowquoteitemsRow = ((quoteitemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemNumber,
@@ -4932,7 +4939,10 @@ namespace QMS {
                         ItemDescription,
                         Details,
                         Price,
-                        QNL};
+                        null};
+                if ((parentquotesRowByquotesRelationship != null)) {
+                    columnValuesArray[5] = parentquotesRowByquotesRelationship[0];
+                }
                 rowquoteitemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowquoteitemsRow);
                 return rowquoteitemsRow;
@@ -13620,6 +13630,17 @@ namespace QMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public quotesRow quotesRow {
+                get {
+                    return ((quotesRow)(this.GetParentRow(this.Table.ParentRelations["quotesRelationship"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["quotesRelationship"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsItemNumberNull() {
                 return this.IsNull(this.tablequoteitems.ItemNumberColumn);
             }
@@ -14554,6 +14575,17 @@ namespace QMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetInfoNull() {
                 this[this.tablequotes.InfoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public quoteitemsRow[] GetquoteitemsRows() {
+                if ((this.Table.ChildRelations["quotesRelationship"] == null)) {
+                    return new quoteitemsRow[0];
+                }
+                else {
+                    return ((quoteitemsRow[])(base.GetChildRows(this.Table.ChildRelations["quotesRelationship"])));
+                }
             }
         }
         
@@ -38301,21 +38333,21 @@ namespace QMS.alldataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(alldata dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._invoicesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.invoices.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._invoicesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this.@__06mmTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this.@__06mmTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -38391,12 +38423,12 @@ namespace QMS.alldataTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._quotesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this.@__06mmTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._quotesTableAdapter.Update(updatedRows));
+                    result = (result + this.@__06mmTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -38500,19 +38532,19 @@ namespace QMS.alldataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(alldata dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._invoicesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.invoices.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._invoicesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this.@__06mmTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this.@__06mmTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -38580,11 +38612,11 @@ namespace QMS.alldataTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._quotesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this.@__06mmTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._quotesTableAdapter.Update(addedRows));
+                    result = (result + this.@__06mmTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -38758,11 +38790,11 @@ namespace QMS.alldataTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._quotesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this.@__06mmTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._quotesTableAdapter.Update(deletedRows));
+                    result = (result + this.@__06mmTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -38830,19 +38862,19 @@ namespace QMS.alldataTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this.@__06mmTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._06mm.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this.@__06mmTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._invoicesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.invoices.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._invoicesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.quotes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

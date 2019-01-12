@@ -14,6 +14,7 @@ using Bunifu.Framework.UI;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using QMS;
+using QMS.quoting;
 
 
 
@@ -205,6 +206,12 @@ namespace QMS
         {
             invoiceLoad invp = new invoiceLoad();
             invp.Show();
+        }
+
+        private void file_QuoteLoad_Click(object sender, EventArgs e)
+        {
+            quoting.quoteLoad qtl = new quoting.quoteLoad();
+            qtl.Show();
         }
     }
 

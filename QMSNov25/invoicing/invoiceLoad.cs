@@ -193,11 +193,7 @@ namespace QMS
 
         }
 
-        private void searchToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            invoicing.invSearchForm isf = new invoicing.invSearchForm();
-            isf.ShowDialog();
-        }
+        
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {

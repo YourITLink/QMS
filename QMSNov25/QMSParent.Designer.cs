@@ -56,8 +56,10 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.quotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewNewQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dummyInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceWorksheetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.shutterProfileToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +94,6 @@
             this.statusTime = new System.Windows.Forms.StatusBarPanel();
             this.statusDate = new System.Windows.Forms.StatusBarPanel();
             this.statusUser = new System.Windows.Forms.StatusBarPanel();
-            this.printInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusTime)).BeginInit();
@@ -317,9 +318,18 @@
             // 
             // quotesToolStripMenuItem
             // 
+            this.quotesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewNewQuoteToolStripMenuItem});
             this.quotesToolStripMenuItem.Name = "quotesToolStripMenuItem";
             this.quotesToolStripMenuItem.Size = new System.Drawing.Size(52, 19);
             this.quotesToolStripMenuItem.Text = "Quote";
+            // 
+            // viewNewQuoteToolStripMenuItem
+            // 
+            this.viewNewQuoteToolStripMenuItem.Name = "viewNewQuoteToolStripMenuItem";
+            this.viewNewQuoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewNewQuoteToolStripMenuItem.Text = "View/New Quote";
+            this.viewNewQuoteToolStripMenuItem.Click += new System.EventHandler(this.file_QuoteLoad_Click);
             // 
             // invoiceToolStripMenuItem
             // 
@@ -333,10 +343,17 @@
             // dummyInvoiceToolStripMenuItem
             // 
             this.dummyInvoiceToolStripMenuItem.Name = "dummyInvoiceToolStripMenuItem";
-            this.dummyInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dummyInvoiceToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.dummyInvoiceToolStripMenuItem.Text = "Dummy Invoice";
             this.dummyInvoiceToolStripMenuItem.Click += new System.EventHandler(this.dummyInvoiceToolStripMenuItem_Click);
             this.dummyInvoiceToolStripMenuItem.MouseHover += new System.EventHandler(this.dummyInvoiceToolStripMenuItem1_MouseHover);
+            // 
+            // printInvoiceToolStripMenuItem
+            // 
+            this.printInvoiceToolStripMenuItem.Name = "printInvoiceToolStripMenuItem";
+            this.printInvoiceToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.printInvoiceToolStripMenuItem.Text = "Print Invoice";
+            this.printInvoiceToolStripMenuItem.Click += new System.EventHandler(this.printInvoiceToolStripMenuItem_Click);
             // 
             // serviceToolStripMenuItem
             // 
@@ -569,13 +586,6 @@
             this.statusUser.Name = "statusUser";
             this.statusUser.Width = 300;
             // 
-            // printInvoiceToolStripMenuItem
-            // 
-            this.printInvoiceToolStripMenuItem.Name = "printInvoiceToolStripMenuItem";
-            this.printInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.printInvoiceToolStripMenuItem.Text = "Print Invoice";
-            this.printInvoiceToolStripMenuItem.Click += new System.EventHandler(this.printInvoiceToolStripMenuItem_Click);
-            // 
             // QMSParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -674,6 +684,7 @@
         private System.Windows.Forms.ToolStripMenuItem shutterProfileToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem completedProfilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printInvoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewNewQuoteToolStripMenuItem;
     }
 }
 
