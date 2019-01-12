@@ -20,7 +20,8 @@ namespace QMS
     public partial class loginForm : MaterialForm
     {
 
-        
+        public static string userName;
+        public static string test;
 
         public loginForm()  
         {
@@ -43,16 +44,19 @@ namespace QMS
                     int i = Convert.ToInt32(cmd.ExecuteScalar());
                     if (i > 0)
                     {
+                        loginForm.userName = UsernameO.Text;
+                        QMSParent invf = new QMSParent();
                         
-                        QMSParent invf = new QMSParent(UsernameO.Text);
+                       
                         invf.Show();
                         this.Hide();
-                        QMSParent.variable1 = UsernameO.Text;
+                        
                     }
                     else
                     {
                         MessageBox.Show("UserName or Password error.");
-                       
+                        
+
                     }
                     
                 }

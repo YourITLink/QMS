@@ -19,6 +19,8 @@ namespace QMS.invoicing
 {
     public partial class invSearchForm : MaterialForm
     {
+
+        
         public invSearchForm()
         {
             InitializeComponent();
@@ -26,23 +28,22 @@ namespace QMS.invoicing
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            invSearchForm invs = new invSearchForm();
-            invs.Show();
         }
 
         private void _SearchValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
-               // this.findInvTableAdapter.searchInvoice();
+                this.schTableAdapter(alldata.sch, _SearchValue.Text);
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                System.Windows.Forms.MessageBox.Show(ex.Message,"Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

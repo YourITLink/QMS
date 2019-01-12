@@ -23,6 +23,12 @@ namespace QMS
     //
     public partial class invoiceLoad : MaterialForm
     {
+        public static string loadInvoice;
+        public static string CustNo;
+        public static string thisInvoice;
+
+        
+
         public invoiceLoad()
         {
             InitializeComponent();
@@ -31,7 +37,9 @@ namespace QMS
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             statusBar1.Panels[0].Text = "Create/Edit/View Dummy Invoices";
-            
+            statusBar1.Panels[3].Text = loginForm.userName;
+
+
 
         }
         
@@ -42,7 +50,7 @@ namespace QMS
         {
             this.invoicesTableAdapter.Fill(this.alldata.invoices);
             // TODO: This line of code loads data into the 'alldata.invitems' table. You can move, or remove it, as needed.
-            this.invitemsTableAdapter.InvNbrItemFill(this.alldata.invitems);
+            this.invitemsTableAdapter.FillBy(this.alldata.invitems);
             // TODO: This line of code loads data into the 'alldata.quoteitems' table. You can move, or remove it, as needed.
             this.nswpcTableAdapter.Fill(this.alldata.nswpc);
             // TODO: This line of code loads data into the 'alldata.invoicetype' table. You can move, or remove it, as needed.
@@ -53,18 +61,16 @@ namespace QMS
             // TODO: This line of code loads data into the 'alldata.staff' table. You can move, or remove it, as needed.
             this.staffTableAdapter.Fill(this.alldata.staff);
             // TODO: This line of code loads data into the 'alldata.staff' table. You can move, or remove it, as needed.
+            //Test "IN" variable collection of Invoice number for current record
+            //Test write variable to form view textbox 
+            //Load "Invoice Number" as a variable to use outside this form
+            invoiceLoad.loadInvoice = invoiceNumberTextBox.Text;
+            invoiceLoad.CustNo = accountNoTextBox.Text;
+            currentInvoice.Text = this.invoiceNumberTextBox.Text;
         }
         //
         // Form data binding sources
         //
-        private void invoicesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.invoicetypeBindingSource.EndEdit();
-            this.invitemsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.alldata);
-            statusBar1.Panels[0].Text = "Invoice Saved to System";
-        }
         //
         // Form status time and date display
         //
@@ -72,7 +78,8 @@ namespace QMS
         {
             statusBar1.Panels[1].Text = DateTime.Now.ToString("hh:mm tt");
             statusBar1.Panels[2].Text = DateTime.Now.ToString("dd/MM/yy");
-            
+            currentInvoice.Text = this.invoiceNumberTextBox.Text;
+
         }
         //
         // Form status texts
@@ -105,7 +112,7 @@ namespace QMS
         {
             this.Validate();
             this.invoicesBindingSource.EndEdit();
-            this.invitemsBindingSource.EndEdit();
+            this.invitemsBindingSource1.EndEdit();
             this.tableAdapterManager.UpdateAll(this.alldata);
             statusBar1.Panels[0].Text = "Record Saved - Commited to database";
             MessageBox.Show("Record update completed.");
@@ -140,13 +147,16 @@ namespace QMS
         private void newInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.invoicesBindingSource.AddNew();
+            this.comboBox1.Text = loginForm.userName;
+            this.comboBox2.Text = "NSW";
+            this.comboBox4.Text = "NSW";
             statusBar1.Panels[0].Text = "Create New Invoice";
         }
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.invoicesBindingSource.EndEdit();
-            this.invoicetypeBindingSource.EndEdit();
+            this.invitemsBindingSource1.EndEdit();
             this.tableAdapterManager.UpdateAll(this.alldata);
             statusBar1.Panels[0].Text = "Record Saved - Commited to database";
             MessageBox.Show("Record update completed.");
@@ -159,7 +169,7 @@ namespace QMS
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox abt = new AboutBox();
-            abt.Show();
+            abt.ShowDialog();
         }
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -185,23 +195,22 @@ namespace QMS
 
         private void searchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            invoicing.invSearchForm ins = new invoicing.invSearchForm();
-            ins.Show();
+            invoicing.invSearchForm isf = new invoicing.invSearchForm();
+            isf.ShowDialog();
         }
 
-        
-
-        private void invoicesBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.invoicesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.alldata);
-            statusBar1.Panels[0].Text = "Invoice Saved to System";
-
+            int input = Convert.ToInt32(invoiceLoad.thisInvoice);
+            invoiceLoad.thisInvoice = currentInvoice.Text;
+            Report1_Form invp = new Report1_Form();
+            invp.ShowDialog();
         }
 
-        
-        
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentInvoice.Text = this.invoiceNumberTextBox.Text;
+        }
     }
 }
 

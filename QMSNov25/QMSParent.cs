@@ -13,6 +13,7 @@ using System.Configuration;
 using Bunifu.Framework.UI;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using QMS;
 
 
 
@@ -21,16 +22,17 @@ namespace QMS
     public partial class QMSParent : Form
     {
         private int childFormNumber = 0;
-        public static string variable1;
+        
 
         //Construct Username using "string and message"
-        public QMSParent(string text)
+        public QMSParent()
         {
 
              
             InitializeComponent();
             //Load in Username to Label1 as "Message"
-            statusBar1.Panels[3].Text = variable1;
+            statusBar1.Panels[3].Text = loginForm.userName;
+           
          
         }
         
@@ -195,11 +197,15 @@ namespace QMS
 
         private void dummyInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //invoiceLoad invf = new invoiceLoad();
-            //invf.ShowDialog();
+            invoiceLoad invf = new invoiceLoad();
+            invf.Show();
         }
 
-       
+        private void printInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            invoiceLoad invp = new invoiceLoad();
+            invp.Show();
+        }
     }
 
         }

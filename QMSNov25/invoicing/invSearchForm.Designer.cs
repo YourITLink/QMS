@@ -53,9 +53,8 @@
             this.invCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.findInvBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alldata = new QMS.alldata();
-            this.findInvTableAdapter = new QMS.alldataTableAdapters.FindInvTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,10 +86,12 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.findInvBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.findInvBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alldata)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.findInvBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _SearchValue
@@ -138,14 +139,13 @@
             this.invCodeDataGridViewTextBoxColumn,
             this.custEmailDataGridViewTextBoxColumn,
             this.userDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.findInvBindingSource;
+            this.dataGridView1.DataSource = this.schBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(956, 424);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // invoiceNumberDataGridViewTextBoxColumn
             // 
@@ -287,19 +287,15 @@
             this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
             this.userDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // findInvBindingSource
+            // schBindingSource
             // 
-            this.findInvBindingSource.DataMember = "FindInv";
-            this.findInvBindingSource.DataSource = this.alldata;
+            this.schBindingSource.DataMember = "sch";
+            this.schBindingSource.DataSource = this.alldata;
             // 
             // alldata
             // 
             this.alldata.DataSetName = "alldata";
             this.alldata.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // findInvTableAdapter
-            // 
-            this.findInvTableAdapter.ClearBeforeFill = true;
             // 
             // menuStrip1
             // 
@@ -538,6 +534,11 @@
             this.label2.Text = "Type into the search box below to search in: Invoice Number, Original Invoice Num" +
     "ber,  Company, Acct Number, Email Address, Address or Suburb fields ";
             // 
+            // findInvBindingSource
+            // 
+            this.findInvBindingSource.DataMember = "FindInv";
+            this.findInvBindingSource.DataSource = this.alldata;
+            // 
             // invSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,10 +553,11 @@
             this.Name = "invSearchForm";
             this.Text = "Search for Invoice | QSync by Your IT Link";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.findInvBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alldata)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.findInvBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,7 +590,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource findInvBindingSource;
         private alldata alldata;
-        private alldataTableAdapters.FindInvTableAdapter findInvTableAdapter;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -620,5 +621,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource schBindingSource;
     }
 }

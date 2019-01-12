@@ -59,7 +59,11 @@
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dummyInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviceWorksheetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.shutterProfileToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.underTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shutterProfileToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,11 +92,7 @@
             this.statusTime = new System.Windows.Forms.StatusBarPanel();
             this.statusDate = new System.Windows.Forms.StatusBarPanel();
             this.statusUser = new System.Windows.Forms.StatusBarPanel();
-            this.serviceWorksheetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.underTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shutterProfileToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.completedProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-           
+            this.printInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusTime)).BeginInit();
@@ -150,7 +150,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             this.newToolStripMenuItem.MouseHover += new System.EventHandler(this.newToolStripMenuItem_MouseHover);
@@ -324,7 +324,8 @@
             // invoiceToolStripMenuItem
             // 
             this.invoiceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dummyInvoiceToolStripMenuItem});
+            this.dummyInvoiceToolStripMenuItem,
+            this.printInvoiceToolStripMenuItem});
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
             this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.invoiceToolStripMenuItem.Text = "Invoice";
@@ -332,7 +333,7 @@
             // dummyInvoiceToolStripMenuItem
             // 
             this.dummyInvoiceToolStripMenuItem.Name = "dummyInvoiceToolStripMenuItem";
-            this.dummyInvoiceToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.dummyInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dummyInvoiceToolStripMenuItem.Text = "Dummy Invoice";
             this.dummyInvoiceToolStripMenuItem.Click += new System.EventHandler(this.dummyInvoiceToolStripMenuItem_Click);
             this.dummyInvoiceToolStripMenuItem.MouseHover += new System.EventHandler(this.dummyInvoiceToolStripMenuItem1_MouseHover);
@@ -345,6 +346,12 @@
             this.serviceToolStripMenuItem.Size = new System.Drawing.Size(56, 19);
             this.serviceToolStripMenuItem.Text = "Service";
             // 
+            // serviceWorksheetsToolStripMenuItem1
+            // 
+            this.serviceWorksheetsToolStripMenuItem1.Name = "serviceWorksheetsToolStripMenuItem1";
+            this.serviceWorksheetsToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.serviceWorksheetsToolStripMenuItem1.Text = "Service Worksheets";
+            // 
             // shutterProfileToolStripMenuItem3
             // 
             this.shutterProfileToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -353,6 +360,26 @@
             this.shutterProfileToolStripMenuItem3.Name = "shutterProfileToolStripMenuItem3";
             this.shutterProfileToolStripMenuItem3.Size = new System.Drawing.Size(94, 19);
             this.shutterProfileToolStripMenuItem3.Text = "Shutter Profile";
+            // 
+            // underTestingToolStripMenuItem
+            // 
+            this.underTestingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shutterProfileToolStripMenuItem4});
+            this.underTestingToolStripMenuItem.Name = "underTestingToolStripMenuItem";
+            this.underTestingToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.underTestingToolStripMenuItem.Text = "Under Testing";
+            // 
+            // shutterProfileToolStripMenuItem4
+            // 
+            this.shutterProfileToolStripMenuItem4.Name = "shutterProfileToolStripMenuItem4";
+            this.shutterProfileToolStripMenuItem4.Size = new System.Drawing.Size(149, 22);
+            this.shutterProfileToolStripMenuItem4.Text = "Shutter Profile";
+            // 
+            // completedProfilesToolStripMenuItem
+            // 
+            this.completedProfilesToolStripMenuItem.Name = "completedProfilesToolStripMenuItem";
+            this.completedProfilesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.completedProfilesToolStripMenuItem.Text = "Completed Profiles";
             // 
             // windowsMenu
             // 
@@ -538,34 +565,16 @@
             // 
             // statusUser
             // 
+            this.statusUser.MinWidth = 300;
             this.statusUser.Name = "statusUser";
+            this.statusUser.Width = 300;
             // 
-            // serviceWorksheetsToolStripMenuItem1
+            // printInvoiceToolStripMenuItem
             // 
-            this.serviceWorksheetsToolStripMenuItem1.Name = "serviceWorksheetsToolStripMenuItem1";
-            this.serviceWorksheetsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.serviceWorksheetsToolStripMenuItem1.Text = "Service Worksheets";
-            // 
-            // underTestingToolStripMenuItem
-            // 
-            this.underTestingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shutterProfileToolStripMenuItem4});
-            this.underTestingToolStripMenuItem.Name = "underTestingToolStripMenuItem";
-            this.underTestingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.underTestingToolStripMenuItem.Text = "Under Testing";
-            // 
-            // shutterProfileToolStripMenuItem4
-            // 
-            this.shutterProfileToolStripMenuItem4.Name = "shutterProfileToolStripMenuItem4";
-            this.shutterProfileToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
-            this.shutterProfileToolStripMenuItem4.Text = "Shutter Profile";
-            // 
-            // completedProfilesToolStripMenuItem
-            // 
-            this.completedProfilesToolStripMenuItem.Name = "completedProfilesToolStripMenuItem";
-            this.completedProfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.completedProfilesToolStripMenuItem.Text = "Completed Profiles";
-            // 
+            this.printInvoiceToolStripMenuItem.Name = "printInvoiceToolStripMenuItem";
+            this.printInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printInvoiceToolStripMenuItem.Text = "Print Invoice";
+            this.printInvoiceToolStripMenuItem.Click += new System.EventHandler(this.printInvoiceToolStripMenuItem_Click);
             // 
             // QMSParent
             // 
@@ -576,7 +585,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1053, 627);
             this.ControlBox = false;
-            
             this.Controls.Add(this.statusBar1);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
@@ -665,7 +673,7 @@
         private System.Windows.Forms.ToolStripMenuItem underTestingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shutterProfileToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem completedProfilesToolStripMenuItem;
-    
+        private System.Windows.Forms.ToolStripMenuItem printInvoiceToolStripMenuItem;
     }
 }
 

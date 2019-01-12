@@ -81,6 +81,7 @@
             this.statusInfo = new System.Windows.Forms.StatusBarPanel();
             this.statusTime = new System.Windows.Forms.StatusBarPanel();
             this.statusDate = new System.Windows.Forms.StatusBarPanel();
+            this.statusUser = new System.Windows.Forms.StatusBarPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,19 +122,14 @@
             this.firstRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.invoicesTableAdapter = new QMS.alldataTableAdapters.invoicesTableAdapter();
-            this.tableAdapterManager = new QMS.alldataTableAdapters.TableAdapterManager();
-            this.invitemsTableAdapter = new QMS.alldataTableAdapters.invitemsTableAdapter();
-            this.invoicetypeTableAdapter = new QMS.alldataTableAdapters.invoicetypeTableAdapter();
-            this.nswpcTableAdapter = new QMS.alldataTableAdapters.nswpcTableAdapter();
-            this.staffTableAdapter = new QMS.alldataTableAdapters.staffTableAdapter();
-            this.statesTableAdapter = new QMS.alldataTableAdapters.statesTableAdapter();
             this.invoicesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.currentInvoice = new System.Windows.Forms.ToolStripTextBox();
             this.invoiceNumberTextBox = new System.Windows.Forms.TextBox();
-            this.invitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quoteitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,14 +142,24 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invitemsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.invitemsKryptonDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.invitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoicesTableAdapter = new QMS.alldataTableAdapters.invoicesTableAdapter();
+            this.tableAdapterManager = new QMS.alldataTableAdapters.TableAdapterManager();
+            this.invitemsTableAdapter = new QMS.alldataTableAdapters.invitemsTableAdapter();
+            this.invoicetypeTableAdapter = new QMS.alldataTableAdapters.invoicetypeTableAdapter();
+            this.nswpcTableAdapter = new QMS.alldataTableAdapters.nswpcTableAdapter();
+            this.staffTableAdapter = new QMS.alldataTableAdapters.staffTableAdapter();
+            this.statesTableAdapter = new QMS.alldataTableAdapters.statesTableAdapter();
+            this.invitemsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.invitemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusUser = new System.Windows.Forms.StatusBarPanel();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             origInvNumberLabel = new System.Windows.Forms.Label();
             invoiceDateLabel = new System.Windows.Forms.Label();
             customerOrderNoLabel = new System.Windows.Forms.Label();
@@ -184,21 +190,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.statusInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingNavigator)).BeginInit();
             this.invoicesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invitemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quoteitemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invitemsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invitemsKryptonDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invitemsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // origInvNumberLabel
             // 
             origInvNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             origInvNumberLabel.AutoSize = true;
-            origInvNumberLabel.Location = new System.Drawing.Point(35, 0);
+            origInvNumberLabel.Location = new System.Drawing.Point(38, 0);
             origInvNumberLabel.Name = "origInvNumberLabel";
             origInvNumberLabel.Size = new System.Drawing.Size(87, 13);
             origInvNumberLabel.TabIndex = 46;
@@ -208,7 +213,7 @@
             // 
             invoiceDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             invoiceDateLabel.AutoSize = true;
-            invoiceDateLabel.Location = new System.Drawing.Point(51, 53);
+            invoiceDateLabel.Location = new System.Drawing.Point(54, 53);
             invoiceDateLabel.Name = "invoiceDateLabel";
             invoiceDateLabel.Size = new System.Drawing.Size(71, 13);
             invoiceDateLabel.TabIndex = 47;
@@ -218,7 +223,7 @@
             // 
             customerOrderNoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             customerOrderNoLabel.AutoSize = true;
-            customerOrderNoLabel.Location = new System.Drawing.Point(22, 84);
+            customerOrderNoLabel.Location = new System.Drawing.Point(25, 84);
             customerOrderNoLabel.Name = "customerOrderNoLabel";
             customerOrderNoLabel.Size = new System.Drawing.Size(100, 13);
             customerOrderNoLabel.TabIndex = 48;
@@ -228,7 +233,7 @@
             // 
             contactLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             contactLabel.AutoSize = true;
-            contactLabel.Location = new System.Drawing.Point(75, 115);
+            contactLabel.Location = new System.Drawing.Point(78, 115);
             contactLabel.Name = "contactLabel";
             contactLabel.Size = new System.Drawing.Size(47, 13);
             contactLabel.TabIndex = 49;
@@ -238,7 +243,7 @@
             // 
             phoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(81, 146);
+            phoneLabel.Location = new System.Drawing.Point(84, 146);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(41, 13);
             phoneLabel.TabIndex = 50;
@@ -248,7 +253,7 @@
             // 
             accountNoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             accountNoLabel.AutoSize = true;
-            accountNoLabel.Location = new System.Drawing.Point(55, 199);
+            accountNoLabel.Location = new System.Drawing.Point(58, 199);
             accountNoLabel.Name = "accountNoLabel";
             accountNoLabel.Size = new System.Drawing.Size(67, 13);
             accountNoLabel.TabIndex = 51;
@@ -258,7 +263,7 @@
             // 
             compCustLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             compCustLabel.AutoSize = true;
-            compCustLabel.Location = new System.Drawing.Point(37, 230);
+            compCustLabel.Location = new System.Drawing.Point(40, 230);
             compCustLabel.Name = "compCustLabel";
             compCustLabel.Size = new System.Drawing.Size(85, 13);
             compCustLabel.TabIndex = 52;
@@ -268,7 +273,7 @@
             // 
             addressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(439, 0);
+            addressLabel.Location = new System.Drawing.Point(451, 0);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(48, 13);
             addressLabel.TabIndex = 53;
@@ -278,7 +283,7 @@
             // 
             suburbLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             suburbLabel.AutoSize = true;
-            suburbLabel.Location = new System.Drawing.Point(443, 53);
+            suburbLabel.Location = new System.Drawing.Point(455, 53);
             suburbLabel.Name = "suburbLabel";
             suburbLabel.Size = new System.Drawing.Size(44, 13);
             suburbLabel.TabIndex = 54;
@@ -288,7 +293,7 @@
             // 
             stateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             stateLabel.AutoSize = true;
-            stateLabel.Location = new System.Drawing.Point(452, 84);
+            stateLabel.Location = new System.Drawing.Point(464, 84);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new System.Drawing.Size(35, 13);
             stateLabel.TabIndex = 55;
@@ -298,7 +303,7 @@
             // 
             postCodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             postCodeLabel.AutoSize = true;
-            postCodeLabel.Location = new System.Drawing.Point(428, 115);
+            postCodeLabel.Location = new System.Drawing.Point(440, 115);
             postCodeLabel.Name = "postCodeLabel";
             postCodeLabel.Size = new System.Drawing.Size(59, 13);
             postCodeLabel.TabIndex = 56;
@@ -308,7 +313,7 @@
             // 
             sAddressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             sAddressLabel.AutoSize = true;
-            sAddressLabel.Location = new System.Drawing.Point(418, 146);
+            sAddressLabel.Location = new System.Drawing.Point(430, 146);
             sAddressLabel.Name = "sAddressLabel";
             sAddressLabel.Size = new System.Drawing.Size(69, 13);
             sAddressLabel.TabIndex = 57;
@@ -318,7 +323,7 @@
             // 
             sSuburbLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             sSuburbLabel.AutoSize = true;
-            sSuburbLabel.Location = new System.Drawing.Point(422, 199);
+            sSuburbLabel.Location = new System.Drawing.Point(434, 199);
             sSuburbLabel.Name = "sSuburbLabel";
             sSuburbLabel.Size = new System.Drawing.Size(65, 13);
             sSuburbLabel.TabIndex = 58;
@@ -328,7 +333,7 @@
             // 
             sStateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             sStateLabel.AutoSize = true;
-            sStateLabel.Location = new System.Drawing.Point(431, 230);
+            sStateLabel.Location = new System.Drawing.Point(443, 230);
             sStateLabel.Name = "sStateLabel";
             sStateLabel.Size = new System.Drawing.Size(56, 13);
             sStateLabel.TabIndex = 59;
@@ -338,7 +343,7 @@
             // 
             sPostCodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             sPostCodeLabel.AutoSize = true;
-            sPostCodeLabel.Location = new System.Drawing.Point(407, 261);
+            sPostCodeLabel.Location = new System.Drawing.Point(419, 261);
             sPostCodeLabel.Name = "sPostCodeLabel";
             sPostCodeLabel.Size = new System.Drawing.Size(80, 13);
             sPostCodeLabel.TabIndex = 60;
@@ -356,7 +361,7 @@
             // invCodeLabel
             // 
             invCodeLabel.AutoSize = true;
-            invCodeLabel.Location = new System.Drawing.Point(403, 0);
+            invCodeLabel.Location = new System.Drawing.Point(413, 0);
             invCodeLabel.Name = "invCodeLabel";
             invCodeLabel.Size = new System.Drawing.Size(53, 13);
             invCodeLabel.TabIndex = 2;
@@ -375,7 +380,7 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(46, 261);
+            label2.Location = new System.Drawing.Point(49, 261);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(76, 13);
             label2.TabIndex = 97;
@@ -433,7 +438,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.65334F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.65334F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.65334F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(869, 299);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(890, 299);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // comboBox5
@@ -443,7 +448,7 @@
             this.comboBox5.DataSource = this.nswpcBindingSource;
             this.comboBox5.DisplayMember = "Pcode";
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(493, 264);
+            this.comboBox5.Location = new System.Drawing.Point(505, 264);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(88, 21);
             this.comboBox5.TabIndex = 21;
@@ -471,11 +476,10 @@
             this.comboBox4.DataSource = this.statesBindingSource;
             this.comboBox4.DisplayMember = "Item";
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(493, 233);
+            this.comboBox4.Location = new System.Drawing.Point(505, 233);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(88, 21);
             this.comboBox4.TabIndex = 20;
-            this.comboBox4.Text = "NSW";
             this.comboBox4.ValueMember = "Item";
             // 
             // statesBindingSource
@@ -490,7 +494,7 @@
             this.comboBox3.DataSource = this.nswpcBindingSource;
             this.comboBox3.DisplayMember = "Pcode";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(493, 118);
+            this.comboBox3.Location = new System.Drawing.Point(505, 118);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(88, 21);
             this.comboBox3.TabIndex = 17;
@@ -505,17 +509,16 @@
             this.comboBox2.DataSource = this.statesBindingSource;
             this.comboBox2.DisplayMember = "Item";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(493, 87);
+            this.comboBox2.Location = new System.Drawing.Point(505, 87);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(88, 21);
             this.comboBox2.TabIndex = 16;
-            this.comboBox2.Text = "NSW";
             this.comboBox2.ValueMember = "Item";
             // 
             // origInvNumberTextBox
             // 
             this.origInvNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "OrigInvNumber", true));
-            this.origInvNumberTextBox.Location = new System.Drawing.Point(128, 3);
+            this.origInvNumberTextBox.Location = new System.Drawing.Point(131, 3);
             this.origInvNumberTextBox.Name = "origInvNumberTextBox";
             this.origInvNumberTextBox.Size = new System.Drawing.Size(102, 20);
             this.origInvNumberTextBox.TabIndex = 6;
@@ -523,7 +526,7 @@
             // invoiceDateDateTimePicker
             // 
             this.invoiceDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoicesBindingSource, "InvoiceDate", true));
-            this.invoiceDateDateTimePicker.Location = new System.Drawing.Point(128, 56);
+            this.invoiceDateDateTimePicker.Location = new System.Drawing.Point(131, 56);
             this.invoiceDateDateTimePicker.Name = "invoiceDateDateTimePicker";
             this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.invoiceDateDateTimePicker.TabIndex = 7;
@@ -531,7 +534,7 @@
             // customerOrderNoTextBox
             // 
             this.customerOrderNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "CustomerOrderNo", true));
-            this.customerOrderNoTextBox.Location = new System.Drawing.Point(128, 87);
+            this.customerOrderNoTextBox.Location = new System.Drawing.Point(131, 87);
             this.customerOrderNoTextBox.Name = "customerOrderNoTextBox";
             this.customerOrderNoTextBox.Size = new System.Drawing.Size(200, 20);
             this.customerOrderNoTextBox.TabIndex = 8;
@@ -539,7 +542,7 @@
             // contactTextBox
             // 
             this.contactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "Contact", true));
-            this.contactTextBox.Location = new System.Drawing.Point(128, 118);
+            this.contactTextBox.Location = new System.Drawing.Point(131, 118);
             this.contactTextBox.Name = "contactTextBox";
             this.contactTextBox.Size = new System.Drawing.Size(200, 20);
             this.contactTextBox.TabIndex = 9;
@@ -547,7 +550,7 @@
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "Phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(128, 149);
+            this.phoneTextBox.Location = new System.Drawing.Point(131, 149);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(200, 20);
             this.phoneTextBox.TabIndex = 10;
@@ -555,7 +558,7 @@
             // accountNoTextBox
             // 
             this.accountNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "AccountNo", true));
-            this.accountNoTextBox.Location = new System.Drawing.Point(128, 202);
+            this.accountNoTextBox.Location = new System.Drawing.Point(131, 202);
             this.accountNoTextBox.Name = "accountNoTextBox";
             this.accountNoTextBox.Size = new System.Drawing.Size(200, 20);
             this.accountNoTextBox.TabIndex = 11;
@@ -563,7 +566,7 @@
             // compCustTextBox
             // 
             this.compCustTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "CompCust", true));
-            this.compCustTextBox.Location = new System.Drawing.Point(128, 233);
+            this.compCustTextBox.Location = new System.Drawing.Point(131, 233);
             this.compCustTextBox.Name = "compCustTextBox";
             this.compCustTextBox.Size = new System.Drawing.Size(200, 20);
             this.compCustTextBox.TabIndex = 12;
@@ -571,7 +574,7 @@
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(493, 3);
+            this.addressTextBox.Location = new System.Drawing.Point(505, 3);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(200, 47);
@@ -580,7 +583,7 @@
             // suburbTextBox
             // 
             this.suburbTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "Suburb", true));
-            this.suburbTextBox.Location = new System.Drawing.Point(493, 56);
+            this.suburbTextBox.Location = new System.Drawing.Point(505, 56);
             this.suburbTextBox.Name = "suburbTextBox";
             this.suburbTextBox.Size = new System.Drawing.Size(200, 20);
             this.suburbTextBox.TabIndex = 15;
@@ -588,7 +591,7 @@
             // sAddressTextBox
             // 
             this.sAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "SAddress", true));
-            this.sAddressTextBox.Location = new System.Drawing.Point(493, 149);
+            this.sAddressTextBox.Location = new System.Drawing.Point(505, 149);
             this.sAddressTextBox.Multiline = true;
             this.sAddressTextBox.Name = "sAddressTextBox";
             this.sAddressTextBox.Size = new System.Drawing.Size(200, 47);
@@ -597,7 +600,7 @@
             // sSuburbTextBox
             // 
             this.sSuburbTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "SSuburb", true));
-            this.sSuburbTextBox.Location = new System.Drawing.Point(493, 202);
+            this.sSuburbTextBox.Location = new System.Drawing.Point(505, 202);
             this.sSuburbTextBox.Name = "sSuburbTextBox";
             this.sSuburbTextBox.Size = new System.Drawing.Size(200, 20);
             this.sSuburbTextBox.TabIndex = 19;
@@ -605,7 +608,7 @@
             // custEmailTextBox
             // 
             this.custEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "CustEmail", true));
-            this.custEmailTextBox.Location = new System.Drawing.Point(128, 264);
+            this.custEmailTextBox.Location = new System.Drawing.Point(131, 264);
             this.custEmailTextBox.Name = "custEmailTextBox";
             this.custEmailTextBox.Size = new System.Drawing.Size(200, 20);
             this.custEmailTextBox.TabIndex = 13;
@@ -631,7 +634,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.37255F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.62745F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(869, 102);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(890, 102);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // comboBox1
@@ -641,7 +644,7 @@
             this.comboBox1.DataSource = this.staffBindingSource;
             this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(127, 3);
+            this.comboBox1.Location = new System.Drawing.Point(130, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 2;
@@ -655,7 +658,7 @@
             // commentsTextBox
             // 
             this.commentsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "Comments", true));
-            this.commentsTextBox.Location = new System.Drawing.Point(127, 35);
+            this.commentsTextBox.Location = new System.Drawing.Point(130, 35);
             this.commentsTextBox.Multiline = true;
             this.commentsTextBox.Name = "commentsTextBox";
             this.commentsTextBox.Size = new System.Drawing.Size(262, 54);
@@ -668,7 +671,7 @@
             this.userComboBox.DataSource = this.invoicetypeBindingSource;
             this.userComboBox.DisplayMember = "Item";
             this.userComboBox.FormattingEnabled = true;
-            this.userComboBox.Location = new System.Drawing.Point(492, 3);
+            this.userComboBox.Location = new System.Drawing.Point(504, 3);
             this.userComboBox.Name = "userComboBox";
             this.userComboBox.Size = new System.Drawing.Size(131, 21);
             this.userComboBox.TabIndex = 3;
@@ -694,7 +697,7 @@
             this.statusDate,
             this.statusUser});
             this.statusBar1.ShowPanels = true;
-            this.statusBar1.Size = new System.Drawing.Size(869, 18);
+            this.statusBar1.Size = new System.Drawing.Size(890, 18);
             this.statusBar1.TabIndex = 56;
             // 
             // statusInfo
@@ -712,6 +715,12 @@
             // 
             this.statusDate.MinWidth = 100;
             this.statusDate.Name = "statusDate";
+            // 
+            // statusUser
+            // 
+            this.statusUser.MinWidth = 100;
+            this.statusUser.Name = "statusUser";
+            this.statusUser.Width = 300;
             // 
             // label1
             // 
@@ -741,6 +750,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -748,7 +758,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             this.newToolStripMenuItem.MouseHover += new System.EventHandler(this.newToolStripMenuItem_MouseHover);
@@ -759,14 +769,14 @@
             this.deleteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(147, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -774,20 +784,20 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(147, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -795,26 +805,27 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.printToolStripMenuItem.Text = "&Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exitToolStripMenuItem.Text = "&Close";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -1072,58 +1083,9 @@
             this.searchToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(869, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(890, 24);
             this.menuStrip1.TabIndex = 57;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // invoicesTableAdapter
-            // 
-            this.invoicesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager._06mmTableAdapter = null;
-            this.tableAdapterManager._08mmTableAdapter = null;
-            this.tableAdapterManager._10mmTableAdapter = null;
-            this.tableAdapterManager.authTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.customersTableAdapter = null;
-            this.tableAdapterManager.invitemsTableAdapter = this.invitemsTableAdapter;
-            this.tableAdapterManager.invoicesTableAdapter = this.invoicesTableAdapter;
-            this.tableAdapterManager.invoicetypeTableAdapter = this.invoicetypeTableAdapter;
-            this.tableAdapterManager.invtxtTableAdapter = null;
-            this.tableAdapterManager.monthsTableAdapter = null;
-            this.tableAdapterManager.nswpcTableAdapter = this.nswpcTableAdapter;
-            this.tableAdapterManager.quoteitemsTableAdapter = null;
-            this.tableAdapterManager.quotesTableAdapter = null;
-            this.tableAdapterManager.reportsTableAdapter = null;
-            this.tableAdapterManager.servicesTableAdapter = null;
-            this.tableAdapterManager.shuttersalTableAdapter = null;
-            this.tableAdapterManager.shutterstrTableAdapter = null;
-            this.tableAdapterManager.sitesTableAdapter = null;
-            this.tableAdapterManager.staffTableAdapter = this.staffTableAdapter;
-            this.tableAdapterManager.statesTableAdapter = this.statesTableAdapter;
-            this.tableAdapterManager.UpdateOrder = QMS.alldataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // invitemsTableAdapter
-            // 
-            this.invitemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // invoicetypeTableAdapter
-            // 
-            this.invoicetypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // nswpcTableAdapter
-            // 
-            this.nswpcTableAdapter.ClearBeforeFill = true;
-            // 
-            // staffTableAdapter
-            // 
-            this.staffTableAdapter.ClearBeforeFill = true;
-            // 
-            // statesTableAdapter
-            // 
-            this.statesTableAdapter.ClearBeforeFill = true;
             // 
             // invoicesBindingNavigator
             // 
@@ -1134,8 +1096,12 @@
             this.invoicesBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.invoicesBindingNavigator.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invoicesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2,
             this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem});
+            this.bindingNavigatorCountItem,
+            this.toolStripSeparator6,
+            this.toolStripLabel1,
+            this.currentInvoice});
             this.invoicesBindingNavigator.Location = new System.Drawing.Point(0, 809);
             this.invoicesBindingNavigator.MoveFirstItem = null;
             this.invoicesBindingNavigator.MoveLastItem = null;
@@ -1143,7 +1109,7 @@
             this.invoicesBindingNavigator.MovePreviousItem = null;
             this.invoicesBindingNavigator.Name = "invoicesBindingNavigator";
             this.invoicesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.invoicesBindingNavigator.Size = new System.Drawing.Size(869, 25);
+            this.invoicesBindingNavigator.Size = new System.Drawing.Size(890, 25);
             this.invoicesBindingNavigator.TabIndex = 59;
             this.invoicesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -1154,14 +1120,40 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(51, 22);
+            this.toolStripLabel2.Text = "Invoice: ";
+            // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(30, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(98, 22);
+            this.toolStripLabel1.Text = "Invoice Number: ";
+            // 
+            // currentInvoice
+            // 
+            this.currentInvoice.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.currentInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.currentInvoice.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.currentInvoice.Name = "currentInvoice";
+            this.currentInvoice.ReadOnly = true;
+            this.currentInvoice.Size = new System.Drawing.Size(40, 25);
             // 
             // invoiceNumberTextBox
             // 
@@ -1175,16 +1167,6 @@
             this.invoiceNumberTextBox.TabIndex = 60;
             this.invoiceNumberTextBox.TabStop = false;
             this.invoiceNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // invitemsBindingSource
-            // 
-            this.invitemsBindingSource.DataMember = "invitems";
-            this.invitemsBindingSource.DataSource = this.alldata;
-            // 
-            // quoteitemsBindingSource
-            // 
-            this.quoteitemsBindingSource.DataMember = "quoteitems";
-            this.quoteitemsBindingSource.DataSource = this.alldata;
             // 
             // itemNumberDataGridViewTextBoxColumn
             // 
@@ -1262,26 +1244,10 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "QTY";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // invitemsBindingSource1
+            // invitemsBindingSource
             // 
-            this.invitemsBindingSource1.DataMember = "InvNbr";
-            this.invitemsBindingSource1.DataSource = this.invoicesBindingSource;
-            // 
-            // invitemsKryptonDataGridView
-            // 
-            this.invitemsKryptonDataGridView.AutoGenerateColumns = false;
-            this.invitemsKryptonDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.invitemsKryptonDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.invitemsKryptonDataGridView.DataSource = this.invitemsBindingSource1;
-            this.invitemsKryptonDataGridView.Location = new System.Drawing.Point(2, 473);
-            this.invitemsKryptonDataGridView.Name = "invitemsKryptonDataGridView";
-            this.invitemsKryptonDataGridView.Size = new System.Drawing.Size(863, 333);
-            this.invitemsKryptonDataGridView.TabIndex = 22;
+            this.invitemsBindingSource.DataMember = "invitems";
+            this.invitemsBindingSource.DataSource = this.alldata;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1310,17 +1276,99 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "QTY";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager._06mmTableAdapter = null;
+            this.tableAdapterManager._08mmTableAdapter = null;
+            this.tableAdapterManager._10mmTableAdapter = null;
+            this.tableAdapterManager.authTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.customersTableAdapter = null;
+            this.tableAdapterManager.invitems1TableAdapter = null;
+            this.tableAdapterManager.invitemsTableAdapter = this.invitemsTableAdapter;
+            this.tableAdapterManager.invoicesTableAdapter = this.invoicesTableAdapter;
+            this.tableAdapterManager.invoicetypeTableAdapter = this.invoicetypeTableAdapter;
+            this.tableAdapterManager.invtxtTableAdapter = null;
+            this.tableAdapterManager.monthsTableAdapter = null;
+            this.tableAdapterManager.nswpcTableAdapter = this.nswpcTableAdapter;
+            this.tableAdapterManager.quoteitemsTableAdapter = null;
+            this.tableAdapterManager.quotesTableAdapter = null;
+            this.tableAdapterManager.reportsTableAdapter = null;
+            this.tableAdapterManager.servicesTableAdapter = null;
+            this.tableAdapterManager.shuttersalTableAdapter = null;
+            this.tableAdapterManager.shutterstrTableAdapter = null;
+            this.tableAdapterManager.sitesTableAdapter = null;
+            this.tableAdapterManager.staffTableAdapter = this.staffTableAdapter;
+            this.tableAdapterManager.statesTableAdapter = this.statesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = QMS.alldataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // invitemsTableAdapter
+            // 
+            this.invitemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // invoicetypeTableAdapter
+            // 
+            this.invoicetypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // nswpcTableAdapter
+            // 
+            this.nswpcTableAdapter.ClearBeforeFill = true;
+            // 
+            // staffTableAdapter
+            // 
+            this.staffTableAdapter.ClearBeforeFill = true;
+            // 
+            // statesTableAdapter
+            // 
+            this.statesTableAdapter.ClearBeforeFill = true;
+            // 
+            // invitemsBindingSource1
+            // 
+            this.invitemsBindingSource1.DataMember = "InvNbr";
+            this.invitemsBindingSource1.DataSource = this.invoicesBindingSource;
+            // 
+            // invitemsDataGridView
+            // 
+            this.invitemsDataGridView.AutoGenerateColumns = false;
+            this.invitemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.invitemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn13,
+            this.Price});
+            this.invitemsDataGridView.DataSource = this.invitemsBindingSource1;
+            this.invitemsDataGridView.Location = new System.Drawing.Point(1, 476);
+            this.invitemsDataGridView.Name = "invitemsDataGridView";
+            this.invitemsDataGridView.Size = new System.Drawing.Size(889, 330);
+            this.invitemsDataGridView.TabIndex = 60;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "InvoiceNumber";
+            this.dataGridViewTextBoxColumn12.HeaderText = "InvoiceNumber";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
             // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Price (Ex GST)";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Price (Ex GST)";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Item";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Item";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 150;
             // 
-            // statusUser
+            // dataGridViewTextBoxColumn13
             // 
-            this.statusUser.MinWidth = 100;
-            this.statusUser.Name = "statusUser";
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "QTY";
+            this.dataGridViewTextBoxColumn13.HeaderText = "QTY";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
             // 
             // invoiceLoad
             // 
@@ -1329,8 +1377,8 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(869, 852);
-            this.Controls.Add(this.invitemsKryptonDataGridView);
+            this.ClientSize = new System.Drawing.Size(890, 852);
+            this.Controls.Add(this.invitemsDataGridView);
             this.Controls.Add(this.invoiceNumberTextBox);
             this.Controls.Add(this.invoicesBindingNavigator);
             this.Controls.Add(this.label1);
@@ -1357,16 +1405,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.statusInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusUser)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingNavigator)).EndInit();
             this.invoicesBindingNavigator.ResumeLayout(false);
             this.invoicesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invitemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quoteitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invitemsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invitemsKryptonDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invitemsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1455,7 +1502,6 @@
         private System.Windows.Forms.BindingSource statesBindingSource;
         private alldataTableAdapters.nswpcTableAdapter nswpcTableAdapter;
         private System.Windows.Forms.BindingSource nswpcBindingSource;
-        private System.Windows.Forms.BindingSource quoteitemsBindingSource;
         private alldataTableAdapters.invitemsTableAdapter invitemsTableAdapter;
         private System.Windows.Forms.BindingSource invitemsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemNumberDataGridViewTextBoxColumn;
@@ -1470,13 +1516,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingSource invitemsBindingSource1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView invitemsKryptonDataGridView;
+        private System.Windows.Forms.StatusBarPanel statusUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource invitemsBindingSource1;
+        private System.Windows.Forms.DataGridView invitemsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.StatusBarPanel statusUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripTextBox currentInvoice;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

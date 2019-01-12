@@ -112,7 +112,7 @@
             this.UsernameO.Name = "UsernameO";
             this.UsernameO.Size = new System.Drawing.Size(227, 27);
             this.UsernameO.TabIndex = 0;
-            this.UsernameO.Text = "Craig";
+            this.UsernameO.Text = "Craig McEwen";
             this.UsernameO.Enter += new System.EventHandler(this.UsernameO_Enter);
             this.UsernameO.Leave += new System.EventHandler(this.UsernameO_Leave);
             // 

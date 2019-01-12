@@ -130,11 +130,11 @@
       <DependentUpon>alldata.xsd</DependentUpon>
     </Compile>
     <Compile Include="ClassQSync.cs" />
-    <Compile Include="invoiceForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="invoiceForm.Designer.cs">
-      <DependentUpon>invoiceForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="invoicing\invoiceLoad.cs">
       <SubType>Form</SubType>
@@ -177,6 +177,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qsyncDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report1_Form.Designer.cs">
+      <DependentUpon>Report1_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,8 +193,8 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="invoiceForm.resx">
-      <DependentUpon>invoiceForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="invoicing\invoiceLoad.resx">
       <DependentUpon>invoiceLoad.cs</DependentUpon>
@@ -213,8 +219,10 @@
       <DependentUpon>QMSParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report1_Form.resx">
+      <DependentUpon>Report1_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="report_test.rdlc" />
     <EmbeddedResource Include="searchInvoice.resx">
       <DependentUpon>searchInvoice.cs</DependentUpon>
     </EmbeddedResource>
