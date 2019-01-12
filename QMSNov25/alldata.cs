@@ -18,9 +18,12 @@
     }
 }
 
-namespace QMS.alldataTableAdapters {
-    
-    
+namespace QMS.alldataTableAdapters
+{
+    partial class quotesTableAdapter
+    {
+    }
+
     public partial class invitemsTableAdapter {
     }
 }

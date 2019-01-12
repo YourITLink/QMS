@@ -19,6 +19,8 @@ namespace QMS.quoting
 {
     public partial class quoteLoad : MaterialForm
     {
+        public static string currqt;
+
         public quoteLoad()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace QMS.quoting
 
         private void quoteLoad_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'alldata.quotes' table. You can move, or remove it, as needed.
+            this.quotesTableAdapter.Fill(this.alldata.quotes);
             // TODO: This line of code loads data into the 'alldata.nswpc' table. You can move, or remove it, as needed.
             this.nswpcTableAdapter.Fill(this.alldata.nswpc);
             // TODO: This line of code loads data into the 'alldata.states' table. You can move, or remove it, as needed.
@@ -40,8 +44,7 @@ namespace QMS.quoting
             this.staffTableAdapter.Fill(this.alldata.staff);
             // TODO: This line of code loads data into the 'alldata.quoteitems' table. You can move, or remove it, as needed.
             this.quoteitemsTableAdapter.Fill(this.alldata.quoteitems);
-            // TODO: This line of code loads data into the 'alldata.quotes' table. You can move, or remove it, as needed.
-            this.quotesTableAdapter.Fill(this.alldata.quotes);
+            getQuote.Text = quoteNumberTextBox.Text;
 
         }
 
@@ -49,13 +52,14 @@ namespace QMS.quoting
         {
             statusBar1.Panels[1].Text = DateTime.Now.ToString("hh:mm tt");
             statusBar1.Panels[2].Text = DateTime.Now.ToString("dd/MM/yy");
+            getQuote.Text = quoteNumberTextBox.Text;
         }
 
         // Form status texts
         //
         private void file_New_MouseHover(object sender, EventArgs e)
         {
-
+            statusBar1.Panels[0].Text = "Save changes to quote";
         }
         private void fileNew_Click(object sender, EventArgs e)
         {
@@ -117,11 +121,11 @@ namespace QMS.quoting
             this.quotesBindingSource.MoveFirst();
             statusBar1.Panels[0].Text = "Go to First Invoice";
         }
-        private void com_NewRecord_Click(object sender, EventArgs e)
+        private void NewRecord_Click(object sender, EventArgs e)
         {
             this.quotesBindingSource.AddNew();
             this.comboBox1.Text = "New";
-            this.comboBox1.Text = loginForm.userName;
+            this.comboBox5.Text = loginForm.userName;
             this.comboBox3.Text = "NSW";
             statusBar1.Panels[0].Text = "Create New Invoice";
         }
@@ -183,5 +187,6 @@ namespace QMS.quoting
         {
 
         }
+        
     }
 }

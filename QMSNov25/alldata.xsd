@@ -697,7 +697,7 @@ FROM            invitems INNER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="quotesTableAdapter" GeneratorDataComponentClassName="quotesTableAdapter" Name="quotes" UserDataComponentName="quotesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="qmsa (Settings)" DbObjectName="qms.quotes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="qmsa (Settings)" DbObjectName="qms.quotes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `quotes` WHERE ((`QuoteNumber` = @p1) AND ((@p2 = 1 AND `Representative` IS NULL) OR (`Representative` = @p3)) AND ((@p4 = 1 AND `Date1` IS NULL) OR (`Date1` = @p5)) AND ((@p6 = 1 AND `Company` IS NULL) OR (`Company` = @p7)) AND ((@p8 = 1 AND `Address` IS NULL) OR (`Address` = @p9)) AND ((@p10 = 1 AND `Suburb` IS NULL) OR (`Suburb` = @p11)) AND ((@p12 = 1 AND `State` IS NULL) OR (`State` = @p13)) AND ((@p14 = 1 AND `Post Code` IS NULL) OR (`Post Code` = @p15)) AND ((@p16 = 1 AND `Contact Person` IS NULL) OR (`Contact Person` = @p17)) AND ((@p18 = 1 AND `Phone` IS NULL) OR (`Phone` = @p19)) AND ((@p20 = 1 AND `Fax` IS NULL) OR (`Fax` = @p21)) AND ((@p22 = 1 AND `Mobile` IS NULL) OR (`Mobile` = @p23)) AND ((@p24 = 1 AND `Email` IS NULL) OR (`Email` = @p25)) AND ((@p26 = 1 AND `Job Location` IS NULL) OR (`Job Location` = @p27)) AND ((@p28 = 1 AND `Strata No` IS NULL) OR (`Strata No` = @p29)) AND ((@p30 = 1 AND `RefNo` IS NULL) OR (`RefNo` = @p31)) AND ((@p32 = 1 AND `Site Contact` IS NULL) OR (`Site Contact` = @p33)) AND ((@p34 = 1 AND `SCPhone` IS NULL) OR (`SCPhone` = @p35)) AND ((@p36 = 1 AND `SCMobile` IS NULL) OR (`SCMobile` = @p37)) AND ((@p38 = 1 AND `SCEmail` IS NULL) OR (`SCEmail` = @p39)) AND ((@p40 = 1 AND `COD` IS NULL) OR (`COD` = @p41)) AND ((@p42 = 1 AND `7 Days` IS NULL) OR (`7 Days` = @p43)) AND ((@p44 = 1 AND `Order No` IS NULL) OR (`Order No` = @p45)) AND ((@p46 = 1 AND `PROGRESS PAYMENT` IS NULL) OR (`PROGRESS PAYMENT` = @p47)) AND ((@p48 = 1 AND `Induction` IS NULL) OR (`Induction` = @p49)) AND ((@p50 = 1 AND `Induction time` IS NULL) OR (`Induction time` = @p51)) AND ((@p52 = 1 AND `SWMS` IS NULL) OR (`SWMS` = @p53)) AND ((@p54 = 1 AND `App` IS NULL) OR (`App` = @p55)) AND ((@p56 = 1 AND `Info` IS NULL) OR (`Info` = @p57)))</CommandText>
@@ -800,7 +800,7 @@ FROM            invitems INNER JOIN
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `QuoteNumber`, `Representative`, `Date1`, `Company`, `Address`, `Suburb`, `State`, `Post Code`, `Contact Person`, `Phone`, `Fax`, `Mobile`, `Email`, `Job Location`, `Strata No`, `RefNo`, `Site Contact`, `SCPhone`, `SCMobile`, `SCEmail`, `Attachments`, `COD`, `7 Days`, `Order No`, `PROGRESS PAYMENT`, `Induction`, `Induction time`, `SWMS`, `App`, `Notes`, `Info` FROM `quotes`</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1900,7 +1900,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
   <xs:element name="alldata" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="alldata" msprop:Generator_UserDSName="alldata">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="_x0030_6mm" msprop:Generator_TableClassName="_06mmDataTable" msprop:Generator_TableVarName="table06mm" msprop:Generator_TablePropName="_06mm" msprop:Generator_RowDeletingName="_06mmRowDeleting" msprop:Generator_RowChangingName="_06mmRowChanging" msprop:Generator_RowEvHandlerName="_06mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_06mmRowDeleted" msprop:Generator_UserTableName="06mm" msprop:Generator_RowChangedName="_06mmRowChanged" msprop:Generator_RowEvArgName="_06mmRowChangeEvent" msprop:Generator_RowClassName="_06mmRow">
+        <xs:element name="_x0030_6mm" msprop:Generator_TableClassName="_06mmDataTable" msprop:Generator_TableVarName="table06mm" msprop:Generator_RowChangedName="_06mmRowChanged" msprop:Generator_TablePropName="_06mm" msprop:Generator_RowDeletingName="_06mmRowDeleting" msprop:Generator_RowChangingName="_06mmRowChanging" msprop:Generator_RowEvHandlerName="_06mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_06mmRowDeleted" msprop:Generator_RowClassName="_06mmRow" msprop:Generator_UserTableName="06mm" msprop:Generator_RowEvArgName="_06mmRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
@@ -1969,7 +1969,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="_x0030_8mm" msprop:Generator_TableClassName="_08mmDataTable" msprop:Generator_TableVarName="table08mm" msprop:Generator_TablePropName="_08mm" msprop:Generator_RowDeletingName="_08mmRowDeleting" msprop:Generator_RowChangingName="_08mmRowChanging" msprop:Generator_RowEvHandlerName="_08mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_08mmRowDeleted" msprop:Generator_UserTableName="08mm" msprop:Generator_RowChangedName="_08mmRowChanged" msprop:Generator_RowEvArgName="_08mmRowChangeEvent" msprop:Generator_RowClassName="_08mmRow">
+        <xs:element name="_x0030_8mm" msprop:Generator_TableClassName="_08mmDataTable" msprop:Generator_TableVarName="table08mm" msprop:Generator_RowChangedName="_08mmRowChanged" msprop:Generator_TablePropName="_08mm" msprop:Generator_RowDeletingName="_08mmRowDeleting" msprop:Generator_RowChangingName="_08mmRowChanging" msprop:Generator_RowEvHandlerName="_08mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_08mmRowDeleted" msprop:Generator_RowClassName="_08mmRow" msprop:Generator_UserTableName="08mm" msprop:Generator_RowEvArgName="_08mmRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
@@ -2052,7 +2052,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="_x0031_0mm" msprop:Generator_TableClassName="_10mmDataTable" msprop:Generator_TableVarName="table10mm" msprop:Generator_TablePropName="_10mm" msprop:Generator_RowDeletingName="_10mmRowDeleting" msprop:Generator_RowChangingName="_10mmRowChanging" msprop:Generator_RowEvHandlerName="_10mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_10mmRowDeleted" msprop:Generator_UserTableName="10mm" msprop:Generator_RowChangedName="_10mmRowChanged" msprop:Generator_RowEvArgName="_10mmRowChangeEvent" msprop:Generator_RowClassName="_10mmRow">
+        <xs:element name="_x0031_0mm" msprop:Generator_TableClassName="_10mmDataTable" msprop:Generator_TableVarName="table10mm" msprop:Generator_RowChangedName="_10mmRowChanged" msprop:Generator_TablePropName="_10mm" msprop:Generator_RowDeletingName="_10mmRowDeleting" msprop:Generator_RowChangingName="_10mmRowChanging" msprop:Generator_RowEvHandlerName="_10mmRowChangeEventHandler" msprop:Generator_RowDeletedName="_10mmRowDeleted" msprop:Generator_RowClassName="_10mmRow" msprop:Generator_UserTableName="10mm" msprop:Generator_RowEvArgName="_10mmRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
@@ -2156,7 +2156,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="auth" msprop:Generator_TableClassName="authDataTable" msprop:Generator_TableVarName="tableauth" msprop:Generator_TablePropName="auth" msprop:Generator_RowDeletingName="authRowDeleting" msprop:Generator_RowChangingName="authRowChanging" msprop:Generator_RowEvHandlerName="authRowChangeEventHandler" msprop:Generator_RowDeletedName="authRowDeleted" msprop:Generator_UserTableName="auth" msprop:Generator_RowChangedName="authRowChanged" msprop:Generator_RowEvArgName="authRowChangeEvent" msprop:Generator_RowClassName="authRow">
+        <xs:element name="auth" msprop:Generator_TableClassName="authDataTable" msprop:Generator_TableVarName="tableauth" msprop:Generator_RowChangedName="authRowChanged" msprop:Generator_TablePropName="auth" msprop:Generator_RowDeletingName="authRowDeleting" msprop:Generator_RowChangingName="authRowChanging" msprop:Generator_RowEvHandlerName="authRowChangeEventHandler" msprop:Generator_RowDeletedName="authRowDeleted" msprop:Generator_RowClassName="authRow" msprop:Generator_UserTableName="auth" msprop:Generator_RowEvArgName="authRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="authid" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnauthid" msprop:Generator_ColumnPropNameInRow="authid" msprop:Generator_ColumnPropNameInTable="authidColumn" msprop:Generator_UserColumnName="authid" type="xs:int" />
@@ -2180,7 +2180,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="customers" msprop:Generator_TableClassName="customersDataTable" msprop:Generator_TableVarName="tablecustomers" msprop:Generator_TablePropName="customers" msprop:Generator_RowDeletingName="customersRowDeleting" msprop:Generator_RowChangingName="customersRowChanging" msprop:Generator_RowEvHandlerName="customersRowChangeEventHandler" msprop:Generator_RowDeletedName="customersRowDeleted" msprop:Generator_UserTableName="customers" msprop:Generator_RowChangedName="customersRowChanged" msprop:Generator_RowEvArgName="customersRowChangeEvent" msprop:Generator_RowClassName="customersRow">
+        <xs:element name="customers" msprop:Generator_TableClassName="customersDataTable" msprop:Generator_TableVarName="tablecustomers" msprop:Generator_RowChangedName="customersRowChanged" msprop:Generator_TablePropName="customers" msprop:Generator_RowDeletingName="customersRowDeleting" msprop:Generator_RowChangingName="customersRowChanging" msprop:Generator_RowEvHandlerName="customersRowChangeEventHandler" msprop:Generator_RowDeletedName="customersRowDeleted" msprop:Generator_RowClassName="customersRow" msprop:Generator_UserTableName="customers" msprop:Generator_RowEvArgName="customersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CustomerNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCustomerNumber" msprop:Generator_ColumnPropNameInRow="CustomerNumber" msprop:Generator_ColumnPropNameInTable="CustomerNumberColumn" msprop:Generator_UserColumnName="CustomerNumber" type="xs:int" />
@@ -2260,7 +2260,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invitems" msprop:Generator_TableClassName="invitemsDataTable" msprop:Generator_TableVarName="tableinvitems" msprop:Generator_TablePropName="invitems" msprop:Generator_RowDeletingName="invitemsRowDeleting" msprop:Generator_RowChangingName="invitemsRowChanging" msprop:Generator_RowEvHandlerName="invitemsRowChangeEventHandler" msprop:Generator_RowDeletedName="invitemsRowDeleted" msprop:Generator_UserTableName="invitems" msprop:Generator_RowChangedName="invitemsRowChanged" msprop:Generator_RowEvArgName="invitemsRowChangeEvent" msprop:Generator_RowClassName="invitemsRow">
+        <xs:element name="invitems" msprop:Generator_TableClassName="invitemsDataTable" msprop:Generator_TableVarName="tableinvitems" msprop:Generator_RowChangedName="invitemsRowChanged" msprop:Generator_TablePropName="invitems" msprop:Generator_RowDeletingName="invitemsRowDeleting" msprop:Generator_RowChangingName="invitemsRowChanging" msprop:Generator_RowEvHandlerName="invitemsRowChangeEventHandler" msprop:Generator_RowDeletedName="invitemsRowDeleted" msprop:Generator_RowClassName="invitemsRow" msprop:Generator_UserTableName="invitems" msprop:Generator_RowEvArgName="invitemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ItemNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnItemNumber" msprop:Generator_ColumnPropNameInRow="ItemNumber" msprop:Generator_ColumnPropNameInTable="ItemNumberColumn" msprop:Generator_UserColumnName="ItemNumber" type="xs:int" />
@@ -2277,7 +2277,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invoices" msprop:Generator_TableClassName="invoicesDataTable" msprop:Generator_TableVarName="tableinvoices" msprop:Generator_TablePropName="invoices" msprop:Generator_RowDeletingName="invoicesRowDeleting" msprop:Generator_RowChangingName="invoicesRowChanging" msprop:Generator_RowEvHandlerName="invoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="invoicesRowDeleted" msprop:Generator_UserTableName="invoices" msprop:Generator_RowChangedName="invoicesRowChanged" msprop:Generator_RowEvArgName="invoicesRowChangeEvent" msprop:Generator_RowClassName="invoicesRow">
+        <xs:element name="invoices" msprop:Generator_TableClassName="invoicesDataTable" msprop:Generator_TableVarName="tableinvoices" msprop:Generator_RowChangedName="invoicesRowChanged" msprop:Generator_TablePropName="invoices" msprop:Generator_RowDeletingName="invoicesRowDeleting" msprop:Generator_RowChangingName="invoicesRowChanging" msprop:Generator_RowEvHandlerName="invoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="invoicesRowDeleted" msprop:Generator_RowClassName="invoicesRow" msprop:Generator_UserTableName="invoices" msprop:Generator_RowEvArgName="invoicesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="InvoiceNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnInvoiceNumber" msprop:Generator_ColumnPropNameInRow="InvoiceNumber" msprop:Generator_ColumnPropNameInTable="InvoiceNumberColumn" msprop:Generator_UserColumnName="InvoiceNumber" type="xs:int" />
@@ -2405,7 +2405,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invtxt" msprop:Generator_TableClassName="invtxtDataTable" msprop:Generator_TableVarName="tableinvtxt" msprop:Generator_TablePropName="invtxt" msprop:Generator_RowDeletingName="invtxtRowDeleting" msprop:Generator_RowChangingName="invtxtRowChanging" msprop:Generator_RowEvHandlerName="invtxtRowChangeEventHandler" msprop:Generator_RowDeletedName="invtxtRowDeleted" msprop:Generator_UserTableName="invtxt" msprop:Generator_RowChangedName="invtxtRowChanged" msprop:Generator_RowEvArgName="invtxtRowChangeEvent" msprop:Generator_RowClassName="invtxtRow">
+        <xs:element name="invtxt" msprop:Generator_TableClassName="invtxtDataTable" msprop:Generator_TableVarName="tableinvtxt" msprop:Generator_RowChangedName="invtxtRowChanged" msprop:Generator_TablePropName="invtxt" msprop:Generator_RowDeletingName="invtxtRowDeleting" msprop:Generator_RowChangingName="invtxtRowChanging" msprop:Generator_RowEvHandlerName="invtxtRowChangeEventHandler" msprop:Generator_RowDeletedName="invtxtRowDeleted" msprop:Generator_RowClassName="invtxtRow" msprop:Generator_UserTableName="invtxt" msprop:Generator_RowEvArgName="invtxtRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Text" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnPropNameInTable="TextColumn" msprop:Generator_UserColumnName="Text" minOccurs="0">
@@ -2418,7 +2418,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="months" msprop:Generator_TableClassName="monthsDataTable" msprop:Generator_TableVarName="tablemonths" msprop:Generator_TablePropName="months" msprop:Generator_RowDeletingName="monthsRowDeleting" msprop:Generator_RowChangingName="monthsRowChanging" msprop:Generator_RowEvHandlerName="monthsRowChangeEventHandler" msprop:Generator_RowDeletedName="monthsRowDeleted" msprop:Generator_UserTableName="months" msprop:Generator_RowChangedName="monthsRowChanged" msprop:Generator_RowEvArgName="monthsRowChangeEvent" msprop:Generator_RowClassName="monthsRow">
+        <xs:element name="months" msprop:Generator_TableClassName="monthsDataTable" msprop:Generator_TableVarName="tablemonths" msprop:Generator_RowChangedName="monthsRowChanged" msprop:Generator_TablePropName="months" msprop:Generator_RowDeletingName="monthsRowDeleting" msprop:Generator_RowChangingName="monthsRowChanging" msprop:Generator_RowEvHandlerName="monthsRowChangeEventHandler" msprop:Generator_RowDeletedName="monthsRowDeleted" msprop:Generator_RowClassName="monthsRow" msprop:Generator_UserTableName="months" msprop:Generator_RowEvArgName="monthsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" minOccurs="0">
@@ -2432,7 +2432,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="nswpc" msprop:Generator_TableClassName="nswpcDataTable" msprop:Generator_TableVarName="tablenswpc" msprop:Generator_TablePropName="nswpc" msprop:Generator_RowDeletingName="nswpcRowDeleting" msprop:Generator_RowChangingName="nswpcRowChanging" msprop:Generator_RowEvHandlerName="nswpcRowChangeEventHandler" msprop:Generator_RowDeletedName="nswpcRowDeleted" msprop:Generator_UserTableName="nswpc" msprop:Generator_RowChangedName="nswpcRowChanged" msprop:Generator_RowEvArgName="nswpcRowChangeEvent" msprop:Generator_RowClassName="nswpcRow">
+        <xs:element name="nswpc" msprop:Generator_TableClassName="nswpcDataTable" msprop:Generator_TableVarName="tablenswpc" msprop:Generator_RowChangedName="nswpcRowChanged" msprop:Generator_TablePropName="nswpc" msprop:Generator_RowDeletingName="nswpcRowDeleting" msprop:Generator_RowChangingName="nswpcRowChanging" msprop:Generator_RowEvHandlerName="nswpcRowChangeEventHandler" msprop:Generator_RowDeletedName="nswpcRowDeleted" msprop:Generator_RowClassName="nswpcRow" msprop:Generator_UserTableName="nswpc" msprop:Generator_RowEvArgName="nswpcRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
@@ -2468,10 +2468,10 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="quoteitems" msprop:Generator_TableClassName="quoteitemsDataTable" msprop:Generator_TableVarName="tablequoteitems" msprop:Generator_TablePropName="quoteitems" msprop:Generator_RowDeletingName="quoteitemsRowDeleting" msprop:Generator_RowChangingName="quoteitemsRowChanging" msprop:Generator_RowEvHandlerName="quoteitemsRowChangeEventHandler" msprop:Generator_RowDeletedName="quoteitemsRowDeleted" msprop:Generator_UserTableName="quoteitems" msprop:Generator_RowChangedName="quoteitemsRowChanged" msprop:Generator_RowEvArgName="quoteitemsRowChangeEvent" msprop:Generator_RowClassName="quoteitemsRow">
+        <xs:element name="quoteitems" msprop:Generator_TableClassName="quoteitemsDataTable" msprop:Generator_TableVarName="tablequoteitems" msprop:Generator_RowChangedName="quoteitemsRowChanged" msprop:Generator_TablePropName="quoteitems" msprop:Generator_RowDeletingName="quoteitemsRowDeleting" msprop:Generator_RowChangingName="quoteitemsRowChanging" msprop:Generator_RowEvHandlerName="quoteitemsRowChangeEventHandler" msprop:Generator_RowDeletedName="quoteitemsRowDeleted" msprop:Generator_RowClassName="quoteitemsRow" msprop:Generator_UserTableName="quoteitems" msprop:Generator_RowEvArgName="quoteitemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ItemNumber" msprop:Generator_ColumnVarNameInTable="columnItemNumber" msprop:Generator_ColumnPropNameInRow="ItemNumber" msprop:Generator_ColumnPropNameInTable="ItemNumberColumn" msprop:Generator_UserColumnName="ItemNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnItemNumber" msprop:Generator_ColumnPropNameInRow="ItemNumber" msprop:Generator_ColumnPropNameInTable="ItemNumberColumn" msprop:Generator_UserColumnName="ItemNumber" type="xs:int" minOccurs="0" />
               <xs:element name="QuoteNumber" msprop:Generator_ColumnVarNameInTable="columnQuoteNumber" msprop:Generator_ColumnPropNameInRow="QuoteNumber" msprop:Generator_ColumnPropNameInTable="QuoteNumberColumn" msprop:Generator_UserColumnName="QuoteNumber" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2498,10 +2498,10 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="quotes" msprop:Generator_TableClassName="quotesDataTable" msprop:Generator_TableVarName="tablequotes" msprop:Generator_TablePropName="quotes" msprop:Generator_RowDeletingName="quotesRowDeleting" msprop:Generator_RowChangingName="quotesRowChanging" msprop:Generator_RowEvHandlerName="quotesRowChangeEventHandler" msprop:Generator_RowDeletedName="quotesRowDeleted" msprop:Generator_UserTableName="quotes" msprop:Generator_RowChangedName="quotesRowChanged" msprop:Generator_RowEvArgName="quotesRowChangeEvent" msprop:Generator_RowClassName="quotesRow">
+        <xs:element name="quotes" msprop:Generator_TableClassName="quotesDataTable" msprop:Generator_TableVarName="tablequotes" msprop:Generator_RowChangedName="quotesRowChanged" msprop:Generator_TablePropName="quotes" msprop:Generator_RowDeletingName="quotesRowDeleting" msprop:Generator_RowChangingName="quotesRowChanging" msprop:Generator_RowEvHandlerName="quotesRowChangeEventHandler" msprop:Generator_RowDeletedName="quotesRowDeleted" msprop:Generator_RowClassName="quotesRow" msprop:Generator_UserTableName="quotes" msprop:Generator_RowEvArgName="quotesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="QuoteNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnQuoteNumber" msprop:Generator_ColumnPropNameInRow="QuoteNumber" msprop:Generator_ColumnPropNameInTable="QuoteNumberColumn" msprop:Generator_UserColumnName="QuoteNumber" type="xs:int" />
+              <xs:element name="QuoteNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnQuoteNumber" msprop:Generator_ColumnPropNameInRow="QuoteNumber" msprop:Generator_ColumnPropNameInTable="QuoteNumberColumn" msprop:Generator_UserColumnName="QuoteNumber" type="xs:int" />
               <xs:element name="Representative" msprop:Generator_ColumnVarNameInTable="columnRepresentative" msprop:Generator_ColumnPropNameInRow="Representative" msprop:Generator_ColumnPropNameInTable="RepresentativeColumn" msprop:Generator_UserColumnName="Representative" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2661,7 +2661,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="reports" msprop:Generator_TableClassName="reportsDataTable" msprop:Generator_TableVarName="tablereports" msprop:Generator_TablePropName="reports" msprop:Generator_RowDeletingName="reportsRowDeleting" msprop:Generator_RowChangingName="reportsRowChanging" msprop:Generator_RowEvHandlerName="reportsRowChangeEventHandler" msprop:Generator_RowDeletedName="reportsRowDeleted" msprop:Generator_UserTableName="reports" msprop:Generator_RowChangedName="reportsRowChanged" msprop:Generator_RowEvArgName="reportsRowChangeEvent" msprop:Generator_RowClassName="reportsRow">
+        <xs:element name="reports" msprop:Generator_TableClassName="reportsDataTable" msprop:Generator_TableVarName="tablereports" msprop:Generator_RowChangedName="reportsRowChanged" msprop:Generator_TablePropName="reports" msprop:Generator_RowDeletingName="reportsRowDeleting" msprop:Generator_RowChangingName="reportsRowChanging" msprop:Generator_RowEvHandlerName="reportsRowChangeEventHandler" msprop:Generator_RowDeletedName="reportsRowDeleted" msprop:Generator_RowClassName="reportsRow" msprop:Generator_UserTableName="reports" msprop:Generator_RowEvArgName="reportsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Report_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnReport_Name" msprop:Generator_ColumnPropNameInRow="Report_Name" msprop:Generator_ColumnPropNameInTable="Report_NameColumn" msprop:Generator_UserColumnName="Report Name" minOccurs="0">
@@ -2682,7 +2682,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="services" msprop:Generator_TableClassName="servicesDataTable" msprop:Generator_TableVarName="tableservices" msprop:Generator_TablePropName="services" msprop:Generator_RowDeletingName="servicesRowDeleting" msprop:Generator_RowChangingName="servicesRowChanging" msprop:Generator_RowEvHandlerName="servicesRowChangeEventHandler" msprop:Generator_RowDeletedName="servicesRowDeleted" msprop:Generator_UserTableName="services" msprop:Generator_RowChangedName="servicesRowChanged" msprop:Generator_RowEvArgName="servicesRowChangeEvent" msprop:Generator_RowClassName="servicesRow">
+        <xs:element name="services" msprop:Generator_TableClassName="servicesDataTable" msprop:Generator_TableVarName="tableservices" msprop:Generator_RowChangedName="servicesRowChanged" msprop:Generator_TablePropName="services" msprop:Generator_RowDeletingName="servicesRowDeleting" msprop:Generator_RowChangingName="servicesRowChanging" msprop:Generator_RowEvHandlerName="servicesRowChangeEventHandler" msprop:Generator_RowDeletedName="servicesRowDeleted" msprop:Generator_RowClassName="servicesRow" msprop:Generator_UserTableName="services" msprop:Generator_RowEvArgName="servicesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SiteNo" msprop:Generator_ColumnVarNameInTable="columnSiteNo" msprop:Generator_ColumnPropNameInRow="SiteNo" msprop:Generator_ColumnPropNameInTable="SiteNoColumn" msprop:Generator_UserColumnName="SiteNo" type="xs:int" minOccurs="0" />
@@ -2742,7 +2742,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="shuttersal" msprop:Generator_TableClassName="shuttersalDataTable" msprop:Generator_TableVarName="tableshuttersal" msprop:Generator_TablePropName="shuttersal" msprop:Generator_RowDeletingName="shuttersalRowDeleting" msprop:Generator_RowChangingName="shuttersalRowChanging" msprop:Generator_RowEvHandlerName="shuttersalRowChangeEventHandler" msprop:Generator_RowDeletedName="shuttersalRowDeleted" msprop:Generator_UserTableName="shuttersal" msprop:Generator_RowChangedName="shuttersalRowChanged" msprop:Generator_RowEvArgName="shuttersalRowChangeEvent" msprop:Generator_RowClassName="shuttersalRow">
+        <xs:element name="shuttersal" msprop:Generator_TableClassName="shuttersalDataTable" msprop:Generator_TableVarName="tableshuttersal" msprop:Generator_RowChangedName="shuttersalRowChanged" msprop:Generator_TablePropName="shuttersal" msprop:Generator_RowDeletingName="shuttersalRowDeleting" msprop:Generator_RowChangingName="shuttersalRowChanging" msprop:Generator_RowEvHandlerName="shuttersalRowChangeEventHandler" msprop:Generator_RowDeletedName="shuttersalRowDeleted" msprop:Generator_RowClassName="shuttersalRow" msprop:Generator_UserTableName="shuttersal" msprop:Generator_RowEvArgName="shuttersalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
@@ -2874,7 +2874,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="shutterstr" msprop:Generator_TableClassName="shutterstrDataTable" msprop:Generator_TableVarName="tableshutterstr" msprop:Generator_TablePropName="shutterstr" msprop:Generator_RowDeletingName="shutterstrRowDeleting" msprop:Generator_RowChangingName="shutterstrRowChanging" msprop:Generator_RowEvHandlerName="shutterstrRowChangeEventHandler" msprop:Generator_RowDeletedName="shutterstrRowDeleted" msprop:Generator_UserTableName="shutterstr" msprop:Generator_RowChangedName="shutterstrRowChanged" msprop:Generator_RowEvArgName="shutterstrRowChangeEvent" msprop:Generator_RowClassName="shutterstrRow">
+        <xs:element name="shutterstr" msprop:Generator_TableClassName="shutterstrDataTable" msprop:Generator_TableVarName="tableshutterstr" msprop:Generator_RowChangedName="shutterstrRowChanged" msprop:Generator_TablePropName="shutterstr" msprop:Generator_RowDeletingName="shutterstrRowDeleting" msprop:Generator_RowChangingName="shutterstrRowChanging" msprop:Generator_RowEvHandlerName="shutterstrRowChangeEventHandler" msprop:Generator_RowDeletedName="shutterstrRowDeleted" msprop:Generator_RowClassName="shutterstrRow" msprop:Generator_UserTableName="shutterstr" msprop:Generator_RowEvArgName="shutterstrRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
@@ -3027,7 +3027,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sites" msprop:Generator_TableClassName="sitesDataTable" msprop:Generator_TableVarName="tablesites" msprop:Generator_TablePropName="sites" msprop:Generator_RowDeletingName="sitesRowDeleting" msprop:Generator_RowChangingName="sitesRowChanging" msprop:Generator_RowEvHandlerName="sitesRowChangeEventHandler" msprop:Generator_RowDeletedName="sitesRowDeleted" msprop:Generator_UserTableName="sites" msprop:Generator_RowChangedName="sitesRowChanged" msprop:Generator_RowEvArgName="sitesRowChangeEvent" msprop:Generator_RowClassName="sitesRow">
+        <xs:element name="sites" msprop:Generator_TableClassName="sitesDataTable" msprop:Generator_TableVarName="tablesites" msprop:Generator_RowChangedName="sitesRowChanged" msprop:Generator_TablePropName="sites" msprop:Generator_RowDeletingName="sitesRowDeleting" msprop:Generator_RowChangingName="sitesRowChanging" msprop:Generator_RowEvHandlerName="sitesRowChangeEventHandler" msprop:Generator_RowDeletedName="sitesRowDeleted" msprop:Generator_RowClassName="sitesRow" msprop:Generator_UserTableName="sites" msprop:Generator_RowEvArgName="sitesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Customer_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnCustomer_Number" msprop:Generator_ColumnPropNameInRow="Customer_Number" msprop:Generator_ColumnPropNameInTable="Customer_NumberColumn" msprop:Generator_UserColumnName="Customer Number" type="xs:int" minOccurs="0" />
@@ -3158,7 +3158,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="staff" msprop:Generator_TableClassName="staffDataTable" msprop:Generator_TableVarName="tablestaff" msprop:Generator_TablePropName="staff" msprop:Generator_RowDeletingName="staffRowDeleting" msprop:Generator_RowChangingName="staffRowChanging" msprop:Generator_RowEvHandlerName="staffRowChangeEventHandler" msprop:Generator_RowDeletedName="staffRowDeleted" msprop:Generator_UserTableName="staff" msprop:Generator_RowChangedName="staffRowChanged" msprop:Generator_RowEvArgName="staffRowChangeEvent" msprop:Generator_RowClassName="staffRow">
+        <xs:element name="staff" msprop:Generator_TableClassName="staffDataTable" msprop:Generator_TableVarName="tablestaff" msprop:Generator_RowChangedName="staffRowChanged" msprop:Generator_TablePropName="staff" msprop:Generator_RowDeletingName="staffRowDeleting" msprop:Generator_RowChangingName="staffRowChanging" msprop:Generator_RowEvHandlerName="staffRowChangeEventHandler" msprop:Generator_RowDeletedName="staffRowDeleted" msprop:Generator_RowClassName="staffRow" msprop:Generator_UserTableName="staff" msprop:Generator_RowEvArgName="staffRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -3202,7 +3202,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="logauth" msprop:Generator_TableClassName="logauthDataTable" msprop:Generator_TableVarName="tablelogauth" msprop:Generator_TablePropName="logauth" msprop:Generator_RowDeletingName="logauthRowDeleting" msprop:Generator_RowChangingName="logauthRowChanging" msprop:Generator_RowEvHandlerName="logauthRowChangeEventHandler" msprop:Generator_RowDeletedName="logauthRowDeleted" msprop:Generator_UserTableName="logauth" msprop:Generator_RowChangedName="logauthRowChanged" msprop:Generator_RowEvArgName="logauthRowChangeEvent" msprop:Generator_RowClassName="logauthRow">
+        <xs:element name="logauth" msprop:Generator_TableClassName="logauthDataTable" msprop:Generator_TableVarName="tablelogauth" msprop:Generator_RowChangedName="logauthRowChanged" msprop:Generator_TablePropName="logauth" msprop:Generator_RowDeletingName="logauthRowDeleting" msprop:Generator_RowChangingName="logauthRowChanging" msprop:Generator_RowEvHandlerName="logauthRowChangeEventHandler" msprop:Generator_RowDeletedName="logauthRowDeleted" msprop:Generator_RowClassName="logauthRow" msprop:Generator_UserTableName="logauth" msprop:Generator_RowEvArgName="logauthRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -3246,7 +3246,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invoicetype" msprop:Generator_TableClassName="invoicetypeDataTable" msprop:Generator_TableVarName="tableinvoicetype" msprop:Generator_TablePropName="invoicetype" msprop:Generator_RowDeletingName="invoicetypeRowDeleting" msprop:Generator_RowChangingName="invoicetypeRowChanging" msprop:Generator_RowEvHandlerName="invoicetypeRowChangeEventHandler" msprop:Generator_RowDeletedName="invoicetypeRowDeleted" msprop:Generator_UserTableName="invoicetype" msprop:Generator_RowChangedName="invoicetypeRowChanged" msprop:Generator_RowEvArgName="invoicetypeRowChangeEvent" msprop:Generator_RowClassName="invoicetypeRow">
+        <xs:element name="invoicetype" msprop:Generator_TableClassName="invoicetypeDataTable" msprop:Generator_TableVarName="tableinvoicetype" msprop:Generator_RowChangedName="invoicetypeRowChanged" msprop:Generator_TablePropName="invoicetype" msprop:Generator_RowDeletingName="invoicetypeRowDeleting" msprop:Generator_RowChangingName="invoicetypeRowChanging" msprop:Generator_RowEvHandlerName="invoicetypeRowChangeEventHandler" msprop:Generator_RowDeletedName="invoicetypeRowDeleted" msprop:Generator_RowClassName="invoicetypeRow" msprop:Generator_UserTableName="invoicetype" msprop:Generator_RowEvArgName="invoicetypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -3274,7 +3274,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="states" msprop:Generator_TableClassName="statesDataTable" msprop:Generator_TableVarName="tablestates" msprop:Generator_TablePropName="states" msprop:Generator_RowDeletingName="statesRowDeleting" msprop:Generator_RowChangingName="statesRowChanging" msprop:Generator_RowEvHandlerName="statesRowChangeEventHandler" msprop:Generator_RowDeletedName="statesRowDeleted" msprop:Generator_UserTableName="states" msprop:Generator_RowChangedName="statesRowChanged" msprop:Generator_RowEvArgName="statesRowChangeEvent" msprop:Generator_RowClassName="statesRow">
+        <xs:element name="states" msprop:Generator_TableClassName="statesDataTable" msprop:Generator_TableVarName="tablestates" msprop:Generator_RowChangedName="statesRowChanged" msprop:Generator_TablePropName="states" msprop:Generator_RowDeletingName="statesRowDeleting" msprop:Generator_RowChangingName="statesRowChanging" msprop:Generator_RowEvHandlerName="statesRowChangeEventHandler" msprop:Generator_RowDeletedName="statesRowDeleted" msprop:Generator_RowClassName="statesRow" msprop:Generator_UserTableName="states" msprop:Generator_RowEvArgName="statesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -3302,7 +3302,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invitems1" msprop:Generator_TableClassName="invitems1DataTable" msprop:Generator_TableVarName="tableinvitems1" msprop:Generator_RowChangedName="invitems1RowChanged" msprop:Generator_TablePropName="invitems1" msprop:Generator_RowDeletingName="invitems1RowDeleting" msprop:Generator_RowChangingName="invitems1RowChanging" msprop:Generator_RowEvHandlerName="invitems1RowChangeEventHandler" msprop:Generator_RowDeletedName="invitems1RowDeleted" msprop:Generator_RowClassName="invitems1Row" msprop:Generator_UserTableName="invitems1" msprop:Generator_RowEvArgName="invitems1RowChangeEvent">
+        <xs:element name="invitems1" msprop:Generator_TableClassName="invitems1DataTable" msprop:Generator_TableVarName="tableinvitems1" msprop:Generator_TablePropName="invitems1" msprop:Generator_RowDeletingName="invitems1RowDeleting" msprop:Generator_RowChangingName="invitems1RowChanging" msprop:Generator_RowEvHandlerName="invitems1RowChangeEventHandler" msprop:Generator_RowDeletedName="invitems1RowDeleted" msprop:Generator_UserTableName="invitems1" msprop:Generator_RowChangedName="invitems1RowChanged" msprop:Generator_RowEvArgName="invitems1RowChangeEvent" msprop:Generator_RowClassName="invitems1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="InvoiceNumber" msprop:Generator_ColumnVarNameInTable="columnInvoiceNumber" msprop:Generator_ColumnPropNameInRow="InvoiceNumber" msprop:Generator_ColumnPropNameInTable="InvoiceNumberColumn" msprop:Generator_UserColumnName="InvoiceNumber" type="xs:int" />
@@ -3319,7 +3319,7 @@ Where invoices.InvoiceNumber=@x</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="InvoiceComplete" msprop:Generator_TableClassName="InvoiceCompleteDataTable" msprop:Generator_TableVarName="tableInvoiceComplete" msprop:Generator_TablePropName="InvoiceComplete" msprop:Generator_RowDeletingName="InvoiceCompleteRowDeleting" msprop:Generator_RowChangingName="InvoiceCompleteRowChanging" msprop:Generator_RowEvHandlerName="InvoiceCompleteRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceCompleteRowDeleted" msprop:Generator_UserTableName="InvoiceComplete" msprop:Generator_RowChangedName="InvoiceCompleteRowChanged" msprop:Generator_RowEvArgName="InvoiceCompleteRowChangeEvent" msprop:Generator_RowClassName="InvoiceCompleteRow">
+        <xs:element name="InvoiceComplete" msprop:Generator_TableClassName="InvoiceCompleteDataTable" msprop:Generator_TableVarName="tableInvoiceComplete" msprop:Generator_RowChangedName="InvoiceCompleteRowChanged" msprop:Generator_TablePropName="InvoiceComplete" msprop:Generator_RowDeletingName="InvoiceCompleteRowDeleting" msprop:Generator_RowChangingName="InvoiceCompleteRowChanging" msprop:Generator_RowEvHandlerName="InvoiceCompleteRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceCompleteRowDeleted" msprop:Generator_RowClassName="InvoiceCompleteRow" msprop:Generator_UserTableName="InvoiceComplete" msprop:Generator_RowEvArgName="InvoiceCompleteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="InvoiceNumber" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnInvoiceNumber" msprop:Generator_ColumnPropNameInRow="InvoiceNumber" msprop:Generator_ColumnPropNameInTable="InvoiceNumberColumn" msprop:Generator_UserColumnName="InvoiceNumber" type="xs:int" />
@@ -3517,10 +3517,10 @@ Where invoices.InvoiceNumber=@x</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="InvNbr" msdata:parent="invoices" msdata:child="invitems" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="invitems" msprop:Generator_ChildPropName="GetinvitemsRows" msprop:Generator_UserRelationName="InvNbr" msprop:Generator_ParentPropName="invoicesRow" msprop:Generator_RelationVarName="relationInvNbr" msprop:Generator_UserParentTable="invoices" />
-      <msdata:Relationship name="InvNbr1" msdata:parent="invoices" msdata:child="invitems1" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="invitems1" msprop:Generator_ChildPropName="Getinvitems1Rows" msprop:Generator_UserRelationName="InvNbr1" msprop:Generator_RelationVarName="relationInvNbr1" msprop:Generator_UserParentTable="invoices" msprop:Generator_ParentPropName="invoicesRow" />
-      <msdata:Relationship name="InvNbr2" msdata:parent="invoices" msdata:child="InvoiceComplete" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="InvoiceComplete" msprop:Generator_ChildPropName="GetInvoiceCompleteRows" msprop:Generator_UserRelationName="InvNbr2" msprop:Generator_ParentPropName="invoicesRow" msprop:Generator_RelationVarName="relationInvNbr2" msprop:Generator_UserParentTable="invoices" />
-      <msdata:Relationship name="quotesRelationship" msdata:parent="quotes" msdata:child="quoteitems" msdata:parentkey="QuoteNumber" msdata:childkey="QNL" msprop:Generator_UserChildTable="quoteitems" msprop:Generator_ChildPropName="GetquoteitemsRows" msprop:Generator_UserRelationName="quotesRelationship" msprop:Generator_RelationVarName="relationquotesRelationship" msprop:Generator_UserParentTable="quotes" msprop:Generator_ParentPropName="quotesRow" />
+      <msdata:Relationship name="InvNbr" msdata:parent="invoices" msdata:child="invitems" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="invitems" msprop:Generator_ChildPropName="GetinvitemsRows" msprop:Generator_UserRelationName="InvNbr" msprop:Generator_RelationVarName="relationInvNbr" msprop:Generator_UserParentTable="invoices" msprop:Generator_ParentPropName="invoicesRow" />
+      <msdata:Relationship name="InvNbr1" msdata:parent="invoices" msdata:child="invitems1" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="invitems1" msprop:Generator_ChildPropName="Getinvitems1Rows" msprop:Generator_UserRelationName="InvNbr1" msprop:Generator_ParentPropName="invoicesRow" msprop:Generator_RelationVarName="relationInvNbr1" msprop:Generator_UserParentTable="invoices" />
+      <msdata:Relationship name="InvNbr2" msdata:parent="invoices" msdata:child="InvoiceComplete" msdata:parentkey="InvoiceNumber" msdata:childkey="InvoiceNumber" msprop:Generator_UserChildTable="InvoiceComplete" msprop:Generator_ChildPropName="GetInvoiceCompleteRows" msprop:Generator_UserRelationName="InvNbr2" msprop:Generator_RelationVarName="relationInvNbr2" msprop:Generator_UserParentTable="invoices" msprop:Generator_ParentPropName="invoicesRow" />
+      <msdata:Relationship name="quotesRelationship" msdata:parent="quotes" msdata:child="quoteitems" msdata:parentkey="QuoteNumber" msdata:childkey="QNL" msprop:Generator_UserChildTable="quoteitems" msprop:Generator_ChildPropName="GetquoteitemsRows" msprop:Generator_UserRelationName="quotesRelationship" msprop:Generator_ParentPropName="quotesRow" msprop:Generator_RelationVarName="relationquotesRelationship" msprop:Generator_UserParentTable="quotes" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

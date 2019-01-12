@@ -207,6 +207,8 @@ namespace QMS
         {
             currentInvoice.Text = this.invoiceNumberTextBox.Text;
         }
+
+       
     }
 }
 
