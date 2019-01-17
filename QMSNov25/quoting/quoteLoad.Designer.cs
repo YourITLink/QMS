@@ -550,7 +550,7 @@
             this.newToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewRecord_Click);
-            this.newToolStripMenuItem.MouseHover += new System.EventHandler(this.file_New_MouseHover);
+            this.newToolStripMenuItem.MouseHover += new System.EventHandler(this.NewRecord_Hover);
             // 
             // deleteToolStripMenuItem
             // 
@@ -560,7 +560,8 @@
             this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.file_Delete_Click);
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.Delete_Click);
+            this.deleteToolStripMenuItem.MouseHover += new System.EventHandler(this.Delete_Hover);
             // 
             // toolStripSeparator
             // 
@@ -575,7 +576,8 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.file_Save_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save_Click);
+            this.saveToolStripMenuItem.MouseHover += new System.EventHandler(this.Save_Hover);
             // 
             // toolStripSeparator1
             // 
@@ -590,6 +592,8 @@
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.printToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.printToolStripMenuItem.Text = "&Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.Print_Click);
+            this.printToolStripMenuItem.MouseHover += new System.EventHandler(this.Print_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
@@ -609,8 +613,8 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exitToolStripMenuItem.Text = "&Close";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.com_exit_Click);
-            this.exitToolStripMenuItem.MouseHover += new System.EventHandler(this.glo_Exit_Hover);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit_Click);
+            this.exitToolStripMenuItem.MouseHover += new System.EventHandler(this.Exit_Hover);
             // 
             // editToolStripMenuItem
             // 
@@ -745,7 +749,8 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.file_About_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.About_Click);
+            this.aboutToolStripMenuItem.MouseHover += new System.EventHandler(this.About_Hover);
             // 
             // exitToolStripMenuItem1
             // 
@@ -756,8 +761,8 @@
             this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
             this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.com_exit_Click);
-            this.exitToolStripMenuItem1.MouseHover += new System.EventHandler(this.glo_Exit_Hover);
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.Exit_Click);
+            this.exitToolStripMenuItem1.MouseHover += new System.EventHandler(this.Exit_Hover);
             // 
             // deleteInvoiceToolStripMenuItem1
             // 
@@ -768,7 +773,8 @@
             this.deleteInvoiceToolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
             this.deleteInvoiceToolStripMenuItem1.Text = "Delete Invoice";
             this.deleteInvoiceToolStripMenuItem1.ToolTipText = "Delete Invoice";
-            this.deleteInvoiceToolStripMenuItem1.Click += new System.EventHandler(this.com_Delete_Click);
+            this.deleteInvoiceToolStripMenuItem1.Click += new System.EventHandler(this.Delete_Click);
+            this.deleteInvoiceToolStripMenuItem1.MouseHover += new System.EventHandler(this.Delete_Hover);
             // 
             // saveToolStripMenuItem1
             // 
@@ -781,7 +787,8 @@
             this.saveToolStripMenuItem1.Tag = "Save Current Invoice";
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.ToolTipText = "Save changes to Invoice";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.com_Save_Click);
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.Save_Click);
+            this.saveToolStripMenuItem1.MouseHover += new System.EventHandler(this.Save_Hover);
             // 
             // newInvoiceToolStripMenuItem
             // 
@@ -795,6 +802,7 @@
             this.newInvoiceToolStripMenuItem.Text = "New Invoice";
             this.newInvoiceToolStripMenuItem.ToolTipText = "Create new Invoice";
             this.newInvoiceToolStripMenuItem.Click += new System.EventHandler(this.NewRecord_Click);
+            this.newInvoiceToolStripMenuItem.MouseHover += new System.EventHandler(this.NewRecord_Hover);
             // 
             // lastRecordToolStripMenuItem1
             // 
@@ -805,7 +813,8 @@
             this.lastRecordToolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
             this.lastRecordToolStripMenuItem1.Text = "Last Record";
             this.lastRecordToolStripMenuItem1.ToolTipText = "Go to last Invoice";
-            this.lastRecordToolStripMenuItem1.Click += new System.EventHandler(this.com_lastRecord_Click);
+            this.lastRecordToolStripMenuItem1.Click += new System.EventHandler(this.LastRecord_Click);
+            this.lastRecordToolStripMenuItem1.MouseHover += new System.EventHandler(this.LastRecord_Hover);
             // 
             // nextRecordToolStripMenuItem
             // 
@@ -816,7 +825,8 @@
             this.nextRecordToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.nextRecordToolStripMenuItem.Text = "Next Record";
             this.nextRecordToolStripMenuItem.ToolTipText = "Go to next Invoice";
-            this.nextRecordToolStripMenuItem.Click += new System.EventHandler(this.com_nextRecord_Click);
+            this.nextRecordToolStripMenuItem.Click += new System.EventHandler(this.NextRecord_Click);
+            this.nextRecordToolStripMenuItem.MouseHover += new System.EventHandler(this.NewRecord_Hover);
             // 
             // lastRecordToolStripMenuItem
             // 
@@ -827,7 +837,8 @@
             this.lastRecordToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.lastRecordToolStripMenuItem.Text = "Previous Record";
             this.lastRecordToolStripMenuItem.ToolTipText = "Go to previous Invoice";
-            this.lastRecordToolStripMenuItem.Click += new System.EventHandler(this.com_PrevRecord_Click);
+            this.lastRecordToolStripMenuItem.Click += new System.EventHandler(this.PrevRecord_Click);
+            this.lastRecordToolStripMenuItem.MouseHover += new System.EventHandler(this.PrevRecord_Hover);
             // 
             // firstRecordToolStripMenuItem
             // 
@@ -838,7 +849,8 @@
             this.firstRecordToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.firstRecordToolStripMenuItem.Text = "First Record";
             this.firstRecordToolStripMenuItem.ToolTipText = "Go to first Invoice";
-            this.firstRecordToolStripMenuItem.Click += new System.EventHandler(this.com_firstRecord_Click);
+            this.firstRecordToolStripMenuItem.Click += new System.EventHandler(this.FirstRecord_Click);
+            this.firstRecordToolStripMenuItem.MouseHover += new System.EventHandler(this.FirstRecord_Hover);
             // 
             // searchToolStripMenuItem1
             // 
@@ -846,6 +858,8 @@
             this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
             this.searchToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.searchToolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.searchToolStripMenuItem1.Click += new System.EventHandler(this.Search_Click);
+            this.searchToolStripMenuItem1.MouseHover += new System.EventHandler(this.Search_Hover);
             // 
             // statusBar1
             // 
@@ -976,6 +990,7 @@
             this.quoteNumberTextBox.Name = "quoteNumberTextBox";
             this.quoteNumberTextBox.Size = new System.Drawing.Size(100, 37);
             this.quoteNumberTextBox.TabIndex = 2;
+            this.quoteNumberTextBox.TabStop = false;
             // 
             // date1DateTimePicker
             // 
@@ -986,7 +1001,7 @@
             this.date1DateTimePicker.Location = new System.Drawing.Point(918, 31);
             this.date1DateTimePicker.Name = "date1DateTimePicker";
             this.date1DateTimePicker.Size = new System.Drawing.Size(162, 31);
-            this.date1DateTimePicker.TabIndex = 6;
+            this.date1DateTimePicker.TabIndex = 30;
             this.date1DateTimePicker.Value = new System.DateTime(2019, 1, 12, 17, 42, 20, 0);
             // 
             // quoteitemsBindingSource
@@ -1008,7 +1023,7 @@
             this.comboBox1.Location = new System.Drawing.Point(655, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 31);
-            this.comboBox1.TabIndex = 63;
+            this.comboBox1.TabIndex = 29;
             // 
             // quotesTableAdapter
             // 
@@ -1050,9 +1065,9 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(0, 68);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1334, 637);
-            this.metroTabControl1.TabIndex = 64;
+            this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
@@ -1103,7 +1118,7 @@
             this.metroTabPage1.Controls.Add(this.groupBox1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 3;
+            this.metroTabPage1.HorizontalScrollbarSize = 1;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(1326, 595);
@@ -1111,7 +1126,7 @@
             this.metroTabPage1.Text = "Quote Main";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 4;
+            this.metroTabPage1.VerticalScrollbarSize = 1;
             // 
             // comboBox4
             // 
@@ -1122,7 +1137,7 @@
             this.comboBox4.Location = new System.Drawing.Point(183, 261);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 31);
-            this.comboBox4.TabIndex = 160;
+            this.comboBox4.TabIndex = 8;
             // 
             // nswpcBindingSource
             // 
@@ -1138,7 +1153,7 @@
             this.comboBox3.Location = new System.Drawing.Point(183, 224);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 31);
-            this.comboBox3.TabIndex = 159;
+            this.comboBox3.TabIndex = 7;
             // 
             // statesBindingSource
             // 
@@ -1154,7 +1169,7 @@
             this.comboBox5.Location = new System.Drawing.Point(183, 7);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(343, 31);
-            this.comboBox5.TabIndex = 158;
+            this.comboBox5.TabIndex = 2;
             // 
             // staffBindingSource
             // 
@@ -1164,61 +1179,67 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "SWMS", true));
+            this.checkBox6.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "SWMS", true));
+            this.checkBox6.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "SWMS", true));
             this.checkBox6.Location = new System.Drawing.Point(1172, 311);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 157;
+            this.checkBox6.TabIndex = 25;
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Induction", true));
+            this.checkBox5.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "Induction", true));
+            this.checkBox5.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "Induction", true));
             this.checkBox5.Location = new System.Drawing.Point(1172, 274);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 156;
+            this.checkBox5.TabIndex = 24;
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Order No", true));
+            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "Order No", true));
+            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "Order No", true));
             this.checkBox4.Location = new System.Drawing.Point(992, 311);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 155;
+            this.checkBox4.TabIndex = 23;
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "PROGRESS PAYMENT", true));
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "PROGRESS PAYMENT", true));
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "PROGRESS PAYMENT", true));
             this.checkBox3.Location = new System.Drawing.Point(992, 273);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 153;
+            this.checkBox3.TabIndex = 22;
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "COD", true));
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "COD", true));
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "COD", true));
             this.checkBox2.Location = new System.Drawing.Point(733, 311);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 152;
+            this.checkBox2.TabIndex = 21;
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "7 Days", true));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "7 Days", true));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "7 Days", true));
             this.checkBox1.Location = new System.Drawing.Point(733, 274);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 151;
+            this.checkBox1.TabIndex = 20;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // companyTextBox
@@ -1227,7 +1248,7 @@
             this.companyTextBox.Location = new System.Drawing.Point(183, 41);
             this.companyTextBox.Name = "companyTextBox";
             this.companyTextBox.Size = new System.Drawing.Size(343, 31);
-            this.companyTextBox.TabIndex = 120;
+            this.companyTextBox.TabIndex = 3;
             // 
             // addressTextBox
             // 
@@ -1236,7 +1257,7 @@
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(343, 61);
-            this.addressTextBox.TabIndex = 122;
+            this.addressTextBox.TabIndex = 5;
             // 
             // suburbTextBox
             // 
@@ -1244,7 +1265,7 @@
             this.suburbTextBox.Location = new System.Drawing.Point(183, 187);
             this.suburbTextBox.Name = "suburbTextBox";
             this.suburbTextBox.Size = new System.Drawing.Size(343, 31);
-            this.suburbTextBox.TabIndex = 124;
+            this.suburbTextBox.TabIndex = 6;
             // 
             // contact_PersonTextBox
             // 
@@ -1252,7 +1273,7 @@
             this.contact_PersonTextBox.Location = new System.Drawing.Point(183, 78);
             this.contact_PersonTextBox.Name = "contact_PersonTextBox";
             this.contact_PersonTextBox.Size = new System.Drawing.Size(343, 31);
-            this.contact_PersonTextBox.TabIndex = 128;
+            this.contact_PersonTextBox.TabIndex = 4;
             // 
             // phoneTextBox
             // 
@@ -1260,7 +1281,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(183, 372);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(149, 31);
-            this.phoneTextBox.TabIndex = 130;
+            this.phoneTextBox.TabIndex = 11;
             // 
             // faxTextBox
             // 
@@ -1268,7 +1289,7 @@
             this.faxTextBox.Location = new System.Drawing.Point(183, 409);
             this.faxTextBox.Name = "faxTextBox";
             this.faxTextBox.Size = new System.Drawing.Size(149, 31);
-            this.faxTextBox.TabIndex = 132;
+            this.faxTextBox.TabIndex = 12;
             // 
             // mobileTextBox
             // 
@@ -1276,7 +1297,7 @@
             this.mobileTextBox.Location = new System.Drawing.Point(183, 446);
             this.mobileTextBox.Name = "mobileTextBox";
             this.mobileTextBox.Size = new System.Drawing.Size(149, 31);
-            this.mobileTextBox.TabIndex = 134;
+            this.mobileTextBox.TabIndex = 13;
             // 
             // emailTextBox
             // 
@@ -1284,7 +1305,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(183, 483);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(541, 31);
-            this.emailTextBox.TabIndex = 136;
+            this.emailTextBox.TabIndex = 14;
             // 
             // strata_NoTextBox
             // 
@@ -1292,7 +1313,7 @@
             this.strata_NoTextBox.Location = new System.Drawing.Point(183, 335);
             this.strata_NoTextBox.Name = "strata_NoTextBox";
             this.strata_NoTextBox.Size = new System.Drawing.Size(343, 31);
-            this.strata_NoTextBox.TabIndex = 138;
+            this.strata_NoTextBox.TabIndex = 10;
             // 
             // refNoTextBox
             // 
@@ -1300,15 +1321,15 @@
             this.refNoTextBox.Location = new System.Drawing.Point(183, 298);
             this.refNoTextBox.Name = "refNoTextBox";
             this.refNoTextBox.Size = new System.Drawing.Size(343, 31);
-            this.refNoTextBox.TabIndex = 140;
+            this.refNoTextBox.TabIndex = 9;
             // 
             // induction_timeTextBox
             // 
             this.induction_timeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Induction time", true));
             this.induction_timeTextBox.Location = new System.Drawing.Point(802, 338);
             this.induction_timeTextBox.Name = "induction_timeTextBox";
-            this.induction_timeTextBox.Size = new System.Drawing.Size(140, 31);
-            this.induction_timeTextBox.TabIndex = 147;
+            this.induction_timeTextBox.Size = new System.Drawing.Size(83, 31);
+            this.induction_timeTextBox.TabIndex = 26;
             // 
             // notesTextBox
             // 
@@ -1317,7 +1338,7 @@
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.Size = new System.Drawing.Size(704, 69);
-            this.notesTextBox.TabIndex = 150;
+            this.notesTextBox.TabIndex = 27;
             // 
             // groupBox1
             // 
@@ -1334,10 +1355,9 @@
             this.groupBox1.Location = new System.Drawing.Point(631, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(684, 251);
-            this.groupBox1.TabIndex = 115;
+            this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Job Location Detail";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // job_LocationTextBox
             // 
@@ -1346,7 +1366,7 @@
             this.job_LocationTextBox.Multiline = true;
             this.job_LocationTextBox.Name = "job_LocationTextBox";
             this.job_LocationTextBox.Size = new System.Drawing.Size(343, 61);
-            this.job_LocationTextBox.TabIndex = 28;
+            this.job_LocationTextBox.TabIndex = 15;
             // 
             // site_ContactTextBox
             // 
@@ -1354,7 +1374,7 @@
             this.site_ContactTextBox.Location = new System.Drawing.Point(186, 91);
             this.site_ContactTextBox.Name = "site_ContactTextBox";
             this.site_ContactTextBox.Size = new System.Drawing.Size(200, 31);
-            this.site_ContactTextBox.TabIndex = 34;
+            this.site_ContactTextBox.TabIndex = 16;
             // 
             // sCPhoneTextBox
             // 
@@ -1362,7 +1382,7 @@
             this.sCPhoneTextBox.Location = new System.Drawing.Point(186, 128);
             this.sCPhoneTextBox.Name = "sCPhoneTextBox";
             this.sCPhoneTextBox.Size = new System.Drawing.Size(200, 31);
-            this.sCPhoneTextBox.TabIndex = 36;
+            this.sCPhoneTextBox.TabIndex = 17;
             // 
             // sCMobileTextBox
             // 
@@ -1370,7 +1390,7 @@
             this.sCMobileTextBox.Location = new System.Drawing.Point(186, 171);
             this.sCMobileTextBox.Name = "sCMobileTextBox";
             this.sCMobileTextBox.Size = new System.Drawing.Size(200, 31);
-            this.sCMobileTextBox.TabIndex = 38;
+            this.sCMobileTextBox.TabIndex = 18;
             // 
             // sCEmailTextBox
             // 
@@ -1378,14 +1398,14 @@
             this.sCEmailTextBox.Location = new System.Drawing.Point(186, 208);
             this.sCEmailTextBox.Name = "sCEmailTextBox";
             this.sCEmailTextBox.Size = new System.Drawing.Size(492, 31);
-            this.sCEmailTextBox.TabIndex = 40;
+            this.sCEmailTextBox.TabIndex = 19;
             // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.quoteitemsDataGridView);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 3;
+            this.metroTabPage2.HorizontalScrollbarSize = 1;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(1326, 595);
@@ -1393,7 +1413,7 @@
             this.metroTabPage2.Text = "Quote Items";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 4;
+            this.metroTabPage2.VerticalScrollbarSize = 1;
             // 
             // quoteitemsDataGridView
             // 
@@ -1407,17 +1427,20 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.quoteitemsDataGridView.DataSource = this.quoteitemsBindingSource;
+            this.quoteitemsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.quoteitemsDataGridView.Location = new System.Drawing.Point(8, 3);
             this.quoteitemsDataGridView.Name = "quoteitemsDataGridView";
             this.quoteitemsDataGridView.Size = new System.Drawing.Size(1310, 589);
-            this.quoteitemsDataGridView.TabIndex = 2;
+            this.quoteitemsDataGridView.TabIndex = 28;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ItemNumber";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ItemNumber";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1491,7 +1514,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "quoteLoad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quotations System | QSync by Your IT Link";
             this.Load += new System.EventHandler(this.quoteLoad_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1615,12 +1640,6 @@
         private System.Windows.Forms.DataGridView quoteitemsDataGridView;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.BindingSource alldataBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.BindingSource staffBindingSource;
         private alldataTableAdapters.staffTableAdapter staffTableAdapter;
         private System.Windows.Forms.BindingSource statesBindingSource;
@@ -1629,5 +1648,11 @@
         private alldataTableAdapters.nswpcTableAdapter nswpcTableAdapter;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox getQuote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

@@ -31,7 +31,6 @@ namespace QMS.quoting
             statusBar1.Panels[0].Text = "Quotations - QSync by Your IT Link";
             statusBar1.Panels[3].Text = loginForm.userName;
         }
-
         private void quoteLoad_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'alldata.quotes' table. You can move, or remove it, as needed.
@@ -47,26 +46,16 @@ namespace QMS.quoting
             getQuote.Text = quoteNumberTextBox.Text;
 
         }
-
+ //
+ // Menu / Command Bar Action Events
+ //
         private void timer1_Tick(object sender, EventArgs e)
         {
             statusBar1.Panels[1].Text = DateTime.Now.ToString("hh:mm tt");
             statusBar1.Panels[2].Text = DateTime.Now.ToString("dd/MM/yy");
             getQuote.Text = quoteNumberTextBox.Text;
         }
-
-        // Form status texts
-        //
-        private void file_New_MouseHover(object sender, EventArgs e)
-        {
-            statusBar1.Panels[0].Text = "Save changes to quote";
-        }
-        private void fileNew_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void file_Delete_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes ==
                 MessageBox.Show("Once deleted the record cannot be recovered, are you sure you want to delete the current record?", "WARNING - DELETE RECORD?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
@@ -75,51 +64,43 @@ namespace QMS.quoting
                 statusBar1.Panels[0].Text = "The record has been deleted";
             }
         }
-        //
-        // Form search box
-        //
-        private void com_search_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
-            statusBar1.Panels[0].Text = "Find an Invoice";
+            statusBar1.Panels[0].Text = "Search for a Quote";
         }
-        //
-        // Form Data command buttons
-        //
-        private void com_Save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.quotesBindingSource.EndEdit();
             this.quoteitemsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.alldata);
             statusBar1.Panels[0].Text = "Record Saved - Commited to database";
-            MessageBox.Show("Record update completed.");
+            MessageBox.Show("Your changes to the quote have been saved.", "Changes Saved", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            
         }
-        //
-        // Form menu commands
-        //
-        private void com_exit_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void com_lastRecord_Click(object sender, EventArgs e)
+        private void LastRecord_Click(object sender, EventArgs e)
         {
             this.quotesBindingSource.MoveLast();
-            statusBar1.Panels[0].Text = "Go to Last Invoice";
+            statusBar1.Panels[0].Text = "Last Quote in System Displayed";
         }
-        private void com_PrevRecord_Click(object sender, EventArgs e)
+        private void PrevRecord_Click(object sender, EventArgs e)
         {
             this.quotesBindingSource.MovePrevious();
-            statusBar1.Panels[0].Text = "Go to Previous Invoice";
+            statusBar1.Panels[0].Text = "Previous Quote Displayed";
         }
-        private void com_nextRecord_Click(object sender, EventArgs e)
+        private void NextRecord_Click(object sender, EventArgs e)
         {
             this.quotesBindingSource.MoveNext();
-            statusBar1.Panels[0].Text = "Go to Next Invoice";
+            statusBar1.Panels[0].Text = "Next Quote Displayed";
         }
-        private void com_firstRecord_Click(object sender, EventArgs e)
+        private void FirstRecord_Click(object sender, EventArgs e)
         {
             this.quotesBindingSource.MoveFirst();
-            statusBar1.Panels[0].Text = "Go to First Invoice";
+            statusBar1.Panels[0].Text = "First Quote Displayed";
         }
         private void NewRecord_Click(object sender, EventArgs e)
         {
@@ -127,66 +108,71 @@ namespace QMS.quoting
             this.comboBox1.Text = "New";
             this.comboBox5.Text = loginForm.userName;
             this.comboBox3.Text = "NSW";
-            statusBar1.Panels[0].Text = "Create New Invoice";
+            statusBar1.Panels[0].Text = "Create New Quotation";
         }
-        private void file_Save_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.quotesBindingSource.EndEdit();
-            this.quoteitemsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.alldata);
-            statusBar1.Panels[0].Text = "Record Saved - Commited to database";
-            MessageBox.Show("Record update completed.");
-        }
-        private void com_Delete_Click(object sender, EventArgs e)
-        {
-            if (DialogResult.Yes ==
-                MessageBox.Show("Once deleted the record cannot be recovered, are you sure you want to delete the current record?", "WARNING - DELETE RECORD?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
-            {
-                this.quotesBindingSource.RemoveCurrent();
-                statusBar1.Panels[0].Text = "The record has been deleted";
-            }
-        }
-        private void file_About_Click(object sender, EventArgs e)
+        private void About_Click(object sender, EventArgs e)
         {
             AboutBox abt = new AboutBox();
             abt.ShowDialog();
+            statusBar1.Panels[0].Text = "About QSync Loading";
         }
-        private void glo_Exit_Hover(object sender, EventArgs e)
-        {
-            statusBar1.Panels[0].Text = "Close Form";
-        }
-
-        private void com_Search_TextChanged(object sender, EventArgs e)
-        {
-            statusBar1.Panels[0].Text = "Searching Records for...";
-        }
-        private void file_Search_Click(object sender, EventArgs e)
-        {
-            //invoicing.invSearchForm isf = new invoicing.invSearchForm();
-            //isf.ShowDialog();
-        }
-
-        private void file_Print_Click(object sender, EventArgs e)
+        private void Print_Click(object sender, EventArgs e)
         {
             int input = Convert.ToInt32(invoiceLoad.thisInvoice);
             //invoiceLoad.thisInvoice = currentInvoice.Text;
             Report1_Form invp = new Report1_Form();
             invp.ShowDialog();
         }
-
-        private void quotesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void Search_TextChanged(object sender, EventArgs e)
         {
-            this.Validate();
-            this.quotesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.alldata);
-
+            statusBar1.Panels[0].Text = "Searching Records for...";
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+ //
+ // Menu Hover Events into StatusBar Text
+ //
+        private void NewRecord_Hover(object sender, EventArgs e)
         {
-
+            statusBar1.Panels[0].Text = "Create a new Quote";
         }
-        
+        private void Exit_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Close Form";
+        }
+        private void Delete_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Delete current quote";
+        }
+        private void Search_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Search for a Quote";
+        }
+        private void Save_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Save changes made to the Quote";
+        }
+        private void LastRecord_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Go to Last Quote";
+        }
+        private void PrevRecord_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Go to Previous Quote";
+        }
+        private void NextRecord_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Go to Next Quote";
+        }
+        private void FirstRecord_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Go to First Quote";
+        }
+        private void About_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "About QSync";
+        }
+        private void Print_Hover(object sender, EventArgs e)
+        {
+            statusBar1.Panels[0].Text = "Load a preview of the Quote to Print";
+        }
     }
 }

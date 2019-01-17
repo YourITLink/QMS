@@ -215,6 +215,7 @@
     <EmbeddedResource Include="quoting\quoteLoad.resx">
       <DependentUpon>quoteLoad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="quoting\quotePreview.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report1_Form.resx">
       <DependentUpon>Report1_Form.cs</DependentUpon>
