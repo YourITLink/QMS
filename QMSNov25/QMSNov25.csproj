@@ -177,6 +177,12 @@
     <Compile Include="quoting\quoteLoad.Designer.cs">
       <DependentUpon>quoteLoad.cs</DependentUpon>
     </Compile>
+    <Compile Include="quoting\quotePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quoting\quotePreview.Designer.cs">
+      <DependentUpon>quotePreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report1_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
       <DependentUpon>quoteLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quoting\quotePreview.rdlc" />
+    <EmbeddedResource Include="quoting\quotePreview.resx">
+      <DependentUpon>quotePreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report1_Form.resx">
       <DependentUpon>Report1_Form.cs</DependentUpon>

@@ -19,7 +19,7 @@ namespace QMS.quoting
 {
     public partial class quoteLoad : MaterialForm
     {
-        public static string currqt;
+        public static string thisQuote;
 
         public quoteLoad()
         {
@@ -43,7 +43,7 @@ namespace QMS.quoting
             this.staffTableAdapter.Fill(this.alldata.staff);
             // TODO: This line of code loads data into the 'alldata.quoteitems' table. You can move, or remove it, as needed.
             this.quoteitemsTableAdapter.Fill(this.alldata.quoteitems);
-            getQuote.Text = quoteNumberTextBox.Text;
+            currentQuote.Text = quoteNumberTextBox.Text;
 
         }
  //
@@ -53,7 +53,7 @@ namespace QMS.quoting
         {
             statusBar1.Panels[1].Text = DateTime.Now.ToString("hh:mm tt");
             statusBar1.Panels[2].Text = DateTime.Now.ToString("dd/MM/yy");
-            getQuote.Text = quoteNumberTextBox.Text;
+            currentQuote.Text = quoteNumberTextBox.Text;
         }
         private void Delete_Click(object sender, EventArgs e)
         {
@@ -118,10 +118,10 @@ namespace QMS.quoting
         }
         private void Print_Click(object sender, EventArgs e)
         {
-            int input = Convert.ToInt32(invoiceLoad.thisInvoice);
-            //invoiceLoad.thisInvoice = currentInvoice.Text;
-            Report1_Form invp = new Report1_Form();
-            invp.ShowDialog();
+            int input = Convert.ToInt32(quoteLoad.thisQuote);
+            quoteLoad.thisQuote = currentQuote.Text;
+            quotePreview qtep = new quotePreview();
+            qtep.ShowDialog();
         }
         private void Search_TextChanged(object sender, EventArgs e)
         {

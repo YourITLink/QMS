@@ -112,7 +112,7 @@
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.getQuote = new System.Windows.Forms.ToolStripTextBox();
+            this.currentQuote = new System.Windows.Forms.ToolStripTextBox();
             this.quoteNumberTextBox = new System.Windows.Forms.TextBox();
             this.date1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.quoteitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -593,7 +593,7 @@
             this.printToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.Print_Click);
-            this.printToolStripMenuItem.MouseHover += new System.EventHandler(this.Print_Click);
+            this.printToolStripMenuItem.MouseHover += new System.EventHandler(this.Print_Hover);
             // 
             // printPreviewToolStripMenuItem
             // 
@@ -916,7 +916,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorSeparator2,
             this.toolStripLabel2,
-            this.getQuote});
+            this.currentQuote});
             this.quotesBindingNavigator.Location = new System.Drawing.Point(0, 708);
             this.quotesBindingNavigator.MoveFirstItem = null;
             this.quotesBindingNavigator.MoveLastItem = null;
@@ -976,10 +976,10 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(62, 22);
             this.toolStripLabel2.Text = "Quote No:";
             // 
-            // getQuote
+            // currentQuote
             // 
-            this.getQuote.Name = "getQuote";
-            this.getQuote.Size = new System.Drawing.Size(100, 25);
+            this.currentQuote.Name = "currentQuote";
+            this.currentQuote.Size = new System.Drawing.Size(100, 25);
             // 
             // quoteNumberTextBox
             // 
@@ -1065,7 +1065,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(0, 68);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1334, 637);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -1130,7 +1130,7 @@
             // 
             // comboBox4
             // 
-            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Post Code", true));
+            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "PostCode", true));
             this.comboBox4.DataSource = this.nswpcBindingSource;
             this.comboBox4.DisplayMember = "Pcode";
             this.comboBox4.FormattingEnabled = true;
@@ -1201,8 +1201,8 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "Order No", true));
-            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "Order No", true));
+            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "OrderNo", true));
+            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "OrderNo", true));
             this.checkBox4.Location = new System.Drawing.Point(992, 311);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
@@ -1212,8 +1212,8 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "PROGRESS PAYMENT", true));
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "PROGRESS PAYMENT", true));
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "PROGRESSPAYMENT", true));
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "PROGRESSPAYMENT", true));
             this.checkBox3.Location = new System.Drawing.Point(992, 273);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
@@ -1234,8 +1234,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "7 Days", true));
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "7 Days", true));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.quotesBindingSource, "SvnDays", true));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.quotesBindingSource, "SvnDays", true));
             this.checkBox1.Location = new System.Drawing.Point(733, 274);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -1269,7 +1269,7 @@
             // 
             // contact_PersonTextBox
             // 
-            this.contact_PersonTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Contact Person", true));
+            this.contact_PersonTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "ContactPerson", true));
             this.contact_PersonTextBox.Location = new System.Drawing.Point(183, 78);
             this.contact_PersonTextBox.Name = "contact_PersonTextBox";
             this.contact_PersonTextBox.Size = new System.Drawing.Size(343, 31);
@@ -1309,7 +1309,7 @@
             // 
             // strata_NoTextBox
             // 
-            this.strata_NoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Strata No", true));
+            this.strata_NoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "StrataNo", true));
             this.strata_NoTextBox.Location = new System.Drawing.Point(183, 335);
             this.strata_NoTextBox.Name = "strata_NoTextBox";
             this.strata_NoTextBox.Size = new System.Drawing.Size(343, 31);
@@ -1325,7 +1325,7 @@
             // 
             // induction_timeTextBox
             // 
-            this.induction_timeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Induction time", true));
+            this.induction_timeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Inductiontime", true));
             this.induction_timeTextBox.Location = new System.Drawing.Point(802, 338);
             this.induction_timeTextBox.Name = "induction_timeTextBox";
             this.induction_timeTextBox.Size = new System.Drawing.Size(83, 31);
@@ -1361,7 +1361,7 @@
             // 
             // job_LocationTextBox
             // 
-            this.job_LocationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Job Location", true));
+            this.job_LocationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "JobLocation", true));
             this.job_LocationTextBox.Location = new System.Drawing.Point(186, 24);
             this.job_LocationTextBox.Multiline = true;
             this.job_LocationTextBox.Name = "job_LocationTextBox";
@@ -1370,7 +1370,7 @@
             // 
             // site_ContactTextBox
             // 
-            this.site_ContactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Site Contact", true));
+            this.site_ContactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "SiteContact", true));
             this.site_ContactTextBox.Location = new System.Drawing.Point(186, 91);
             this.site_ContactTextBox.Name = "site_ContactTextBox";
             this.site_ContactTextBox.Size = new System.Drawing.Size(200, 31);
@@ -1394,7 +1394,7 @@
             // 
             // sCEmailTextBox
             // 
-            this.sCEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "Email", true));
+            this.sCEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quotesBindingSource, "SCEmail", true));
             this.sCEmailTextBox.Location = new System.Drawing.Point(186, 208);
             this.sCEmailTextBox.Name = "sCEmailTextBox";
             this.sCEmailTextBox.Size = new System.Drawing.Size(492, 31);
@@ -1647,7 +1647,7 @@
         private System.Windows.Forms.BindingSource nswpcBindingSource;
         private alldataTableAdapters.nswpcTableAdapter nswpcTableAdapter;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripTextBox getQuote;
+        private System.Windows.Forms.ToolStripTextBox currentQuote;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

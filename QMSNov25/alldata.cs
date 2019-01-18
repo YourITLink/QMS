@@ -4,6 +4,14 @@
 
     partial class alldata
     {
+        partial class quotesCompletedDataTable
+        {
+        }
+
+        partial class quotesCompleteDataTable
+        {
+        }
+
         partial class FindInvNumDataTable
         {
         }
