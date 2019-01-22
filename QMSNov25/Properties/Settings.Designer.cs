@@ -26,7 +26,7 @@ namespace QMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=qms")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=youritlink.com;user id=abledoors;persistsecurityinfo=True;database=qms")]
         public string qmsdev {
             get {
                 return ((string)(this["qmsdev"]));
@@ -36,8 +36,8 @@ namespace QMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=Matrix_4390;persistsecurityinfo=True;datab" +
-            "ase=qms")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=youritlink.com;user id=abledoors;password=Matrix_4390;persistsecurityinfo=" +
+            "True;database=qms")]
         public string qmsa {
             get {
                 return ((string)(this["qmsa"]));
@@ -47,7 +47,7 @@ namespace QMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=qsync")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=youritlink.com;user id=abledoors;persistsecurityinfo=True;database=qsync")]
         public string qmsCon {
             get {
                 return ((string)(this["qmsCon"]));

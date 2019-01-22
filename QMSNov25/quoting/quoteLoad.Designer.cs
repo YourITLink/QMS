@@ -1031,12 +1031,8 @@
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager._06mmTableAdapter = null;
-            this.tableAdapterManager._08mmTableAdapter = null;
-            this.tableAdapterManager._10mmTableAdapter = null;
             this.tableAdapterManager.authTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.customersTableAdapter = null;
             this.tableAdapterManager.invitems1TableAdapter = null;
             this.tableAdapterManager.invitemsTableAdapter = null;
             this.tableAdapterManager.invoicesTableAdapter = null;
@@ -1046,11 +1042,6 @@
             this.tableAdapterManager.nswpcTableAdapter = null;
             this.tableAdapterManager.quoteitemsTableAdapter = null;
             this.tableAdapterManager.quotesTableAdapter = this.quotesTableAdapter;
-            this.tableAdapterManager.reportsTableAdapter = null;
-            this.tableAdapterManager.servicesTableAdapter = null;
-            this.tableAdapterManager.shuttersalTableAdapter = null;
-            this.tableAdapterManager.shutterstrTableAdapter = null;
-            this.tableAdapterManager.sitesTableAdapter = null;
             this.tableAdapterManager.staffTableAdapter = null;
             this.tableAdapterManager.statesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QMS.alldataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;

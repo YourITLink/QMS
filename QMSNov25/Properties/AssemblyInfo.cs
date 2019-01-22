@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -11,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Your IT Link")]
 [assembly: AssemblyProduct("QMS QSync")]
 [assembly: AssemblyCopyright("Your IT Link ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("QMS QSync")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -34,3 +35,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0.0.1")]
 [assembly: AssemblyFileVersion("25.11.18.1")]
+[assembly: NeutralResourcesLanguage("en-AT")]
+
